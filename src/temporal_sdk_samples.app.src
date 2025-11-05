@@ -1,0 +1,17 @@
+{application, temporal_sdk_samples, [
+    {description, "Temporal Erlang SDK samples"},
+    {vsn, "0.1.0"},
+    {mod, {temporal_sdk_samples_app, []}},
+    {env, []},
+    {modules, []},
+    {registered, []},
+    {applications, [
+        kernel,
+        stdlib,
+        temporal_sdk
+    ]},
+    %% hex.pm package metadata
+    {licenses, ["MIT"]},
+    {links, [{"GitHub", "https://github.com/andrzej-mag/temporal_sdk_samples"}]},
+    {files, []}
+]}.
