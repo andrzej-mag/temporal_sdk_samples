@@ -23,15 +23,14 @@ signal_parallel_handler:start().
     start/0
 ]).
 
+-include("signal_parallel_handler.hrl").
+
 -define(SIGNAL_COUNTER_WId, "signal_counter").
 -define(SIGNAL_COUNTER_WE, #{workflow_id => ?SIGNAL_COUNTER_WId}).
--define(PING_SIGNAL, "ping").
--define(KILL_SIGNAL, "kill").
--define(REPORT_SIGNAL, "report").
 
 start() ->
     temporal_sdk:start_workflow(
-        cluster_1,
+        ?CLUSTER,
         "default",
         signal_parallel_handler_workflow,
         [{workflow_id, ?SIGNAL_COUNTER_WId}, {workflow_execution_timeout, {1, hour}}]
@@ -39,7 +38,7 @@ start() ->
     send_signals(3_000).
 
 send_signals(Count) when is_integer(Count), Count > 0 ->
-    case temporal_sdk:get_workflow_state(cluster_1, ?SIGNAL_COUNTER_WE) of
+    case temporal_sdk:get_workflow_state(?CLUSTER, ?SIGNAL_COUNTER_WE) of
         {ok, running} ->
             send_signal(?PING_SIGNAL),
             case Count rem 100 of
@@ -56,4 +55,4 @@ send_signals(0) ->
     send_signal(?KILL_SIGNAL).
 
 send_signal(Signal) ->
-    temporal_sdk_service:signal_workflow(cluster_1, ?SIGNAL_COUNTER_WE, Signal).
+    temporal_sdk_service:signal_workflow(?CLUSTER, ?SIGNAL_COUNTER_WE, Signal).

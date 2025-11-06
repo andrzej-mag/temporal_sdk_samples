@@ -11,9 +11,7 @@
 
 -include_lib("temporal_sdk/include/workflow.hrl").
 
--define(PING_SIGNAL, "ping").
--define(KILL_SIGNAL, "kill").
--define(REPORT_SIGNAL, "report").
+-include("signal_parallel_handler.hrl").
 
 execute(Context, []) ->
     execute(Context, [0]);
