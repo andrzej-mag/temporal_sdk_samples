@@ -29,18 +29,17 @@ Example run:
     start_with_signal/0
 ]).
 
+-define(CLUSTER, cluster_1).
 -define(CANCEL_ACTIVITY_SIGNAL, "cancel_activity").
 
 start_then_signal() ->
-    Cluster = cluster_1,
     {ok, #{workflow_execution := WE}} =
-        temporal_sdk:start_workflow(Cluster, "default", signal_simple_workflow),
+        temporal_sdk:start_workflow(?CLUSTER, "default", signal_simple_workflow),
     timer:sleep(1_000),
-    temporal_sdk_service:signal_workflow(Cluster, WE, ?CANCEL_ACTIVITY_SIGNAL),
-    temporal_sdk:wait_workflow(Cluster, WE).
+    temporal_sdk_service:signal_workflow(?CLUSTER, WE, ?CANCEL_ACTIVITY_SIGNAL),
+    temporal_sdk:wait_workflow(?CLUSTER, WE).
 
 start_with_signal() ->
-    Cluster = cluster_1,
-    temporal_sdk:start_workflow(Cluster, "default", signal_simple_workflow, [
+    temporal_sdk:start_workflow(?CLUSTER, "default", signal_simple_workflow, [
         wait, {signal_name, ?CANCEL_ACTIVITY_SIGNAL}
     ]).
