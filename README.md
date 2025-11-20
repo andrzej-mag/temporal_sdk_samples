@@ -1,22 +1,37 @@
-# Temporal Erlang SDK samples
+# Temporal Erlang and Elixir SDK samples
 
-[![Hex Version](https://img.shields.io/hexpm/v/temporal_sdk_samples?style=for-the-badge)](https://hex.pm/packages/temporal_sdk_samples)
 [![Hex Docs](https://img.shields.io/badge/hex-docs-informational?style=for-the-badge)](https://hexdocs.pm/temporal_sdk_samples)
 
 This is the set of samples for the
-[Temporal Erlang SDK](https://github.com/andrzej-mag/temporal_sdk).
+[Temporal Erlang and Elixir SDK](https://github.com/andrzej-mag/temporal_sdk).
 
 ## Usage
 
-Clone this repository and start `rebar3 shell`.
+Clone this repository and start `iex -S mix` or `rebar3 shell`.
 Run any of the [available samples](https://hexdocs.pm/temporal_sdk_samples/api-reference.html):
+
+<!-- tabs-open -->
+
+### Elixir
+
+```elixir
+iex(1)> Saga.start()
+Compensation activity started with:
+    %{"deposit" => "completed", "other" => "failed", "withdraw" => "canceled"}
+...
+```
+
+### Erlang
 
 ```erlang
 1> saga:start().
 Compensation activity started with:
     #{<<"deposit">> => <<"completed">>,<<"other">> => <<"failed">>,
       <<"withdraw">> => <<"canceled">>}
+...
 ```
+
+<!-- tabs-close -->
 
 ## Requirements
 

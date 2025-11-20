@@ -1,23 +1,7 @@
 -module(signal_parallel_handler).
 
 % elp:ignore W0012 W0040
--moduledoc """
-Example signal parallel handler.
-
-Example workflow execution performs following tasks:
-  * count `"ping"` signals,
-  * complete workflow on `"kill"` signal,
-  * report current `"ping"` signals count on `"report"` signal,
-  * continue as new workflow execution on `suggest_continue_as_new` event,
-  * fail workflow on `"ping"` signals count exceeding 10_000.
-
-To prevent Temporal server overload, `"ping"` signals are dispatched at 100 millisecond intervals.
-
-Run this example with:
-```erlang
-signal_parallel_handler:start().
-```
-""".
+-moduledoc {file, "../../docs/signal_parallel_handler.md"}.
 
 -export([
     start/0

@@ -15,6 +15,7 @@ execute(_Context, TransferDetails) ->
     ADeposit = start_activity(saga_activity_deposit, TransferDetails, Opts),
     AWithdraw = start_activity(saga_activity_withdraw, TransferDetails, Opts),
     AOther = start_activity(saga_activity_other, TransferDetails, Opts),
+    % Our bank doesn't accept withdrawals today:
     cancel_activity(AWithdraw),
     case wait_all([ADeposit, AWithdraw, AOther]) of
         [#{state := completed}, #{state := completed}, #{state := completed}] ->

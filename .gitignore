@@ -18,3 +18,10 @@ logs
 *.iml
 rebar3.crashdump
 *~
+#
+_deps
+_doc
+cover
+tmp
+*.ez
+temporal_sdk-*.tar
