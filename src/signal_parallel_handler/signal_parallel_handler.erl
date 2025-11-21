@@ -1,6 +1,6 @@
 -module(signal_parallel_handler).
 
-% elp:ignore W0012 W0040
+% elp:ignore W0012 W0040 E1599
 -moduledoc {file, "../../docs/signal_parallel_handler.md"}.
 
 -export([

@@ -1,6 +1,6 @@
 -module(hello_world).
 
-% elp:ignore W0012 W0040
+% elp:ignore W0012 W0040 E1599
 -moduledoc {file, "../../docs/hello_world.md"}.
 
 -export([

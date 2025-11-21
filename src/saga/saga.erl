@@ -1,6 +1,6 @@
 -module(saga).
 
-% elp:ignore W0012 W0040
+% elp:ignore W0012 W0040 E1599
 -moduledoc {file, "../../docs/saga.md"}.
 
 -export([

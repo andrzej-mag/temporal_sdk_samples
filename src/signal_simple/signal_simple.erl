@@ -1,6 +1,6 @@
 -module(signal_simple).
 
-% elp:ignore W0012 W0040
+% elp:ignore W0012 W0040 E1599
 -moduledoc {file, "../../docs/signal_simple.md"}.
 
 -export([

@@ -1,6 +1,6 @@
 -module(activity_heartbeat).
 
-% elp:ignore W0012 W0040
+% elp:ignore W0012 W0040 E1599
 -moduledoc {file, "../../docs/activity_heartbeat.md"}.
 
 -export([

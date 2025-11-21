@@ -1,6 +1,6 @@
 -module(echo_activity).
 
-% elp:ignore W0012 W0040
+% elp:ignore W0012 W0040 E1599
 -moduledoc {file, "../docs/echo_activity.md"}.
 
 -export([
