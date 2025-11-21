@@ -36,7 +36,8 @@ Compensation activity started with:
 ## Requirements
 
 Temporal server running locally or available on `localhost:7233`.
-The recommended option is to use [Temporal CLI](https://github.com/temporalio/cli/):
+For development and testing purposes it is recommended to use
+[Temporal CLI](https://github.com/temporalio/cli/):
 
 1. [Install](https://docs.temporal.io/cli#install) Temporal CLI.
 2. [Start](https://docs.temporal.io/cli#start-dev-server) Temporal CLI dev server.
