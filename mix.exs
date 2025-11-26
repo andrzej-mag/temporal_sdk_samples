@@ -22,9 +22,8 @@ defmodule TemporalSdkSamples.MixProject do
       deps_path: "_deps",
       # hex.pm package metadata
       description: """
-      Temporal Erlang and Elixir SDK samples
-      > This is a dummy Hex package published solely to provide online documentation.
-      > Do not use it as a dependency.
+      Temporal Erlang and Elixir SDK samples.
+      (Dummy Hex package published solely to provide online documentation - do not use it as a dependency.)
       """,
       name: app_name!(),
       source_url: @source_url,
