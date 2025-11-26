@@ -3,12 +3,19 @@ defmodule TemporalSdkSamples.MixProject do
 
   @source_url "https://github.com/andrzej-mag/temporal_sdk_samples"
 
+  @elixir_deps [
+    {:dialyxir, "~> 1.4.0", only: [:dev, :test], runtime: false},
+    {:ex_doc, "~> 0.39.0", only: :dev, runtime: false}
+  ]
+
+  @shared_deps_opts []
+
   def project,
     do: [
       app: app_name!(),
       version: version(),
       elixir: "~> 1.17",
-      deps: deps(),
+      deps: deps(@elixir_deps, @shared_deps_opts),
       erlc_options: rebar_key!(:erl_opts),
       test_paths: ["test_ex"],
       deps_path: "_deps",
@@ -27,14 +34,6 @@ defmodule TemporalSdkSamples.MixProject do
   def application,
     do: [
       extra_applications: [:logger]
-    ]
-
-  defp deps,
-    do: [
-      # {:temporal_sdk, ">= 0.0.0"},
-      {:temporal_sdk, path: "../temporal_sdk"},
-      {:dialyxir, "~> 1.4.0", only: [:dev, :test], runtime: false},
-      {:ex_doc, "~> 0.39.0", only: :dev, runtime: false}
     ]
 
   defp version, do: app_key!(:vsn) |> to_string
@@ -102,5 +101,26 @@ defmodule TemporalSdkSamples.MixProject do
   defp app_name! do
     {name, _meta} = app_src!()
     name
+  end
+
+  defp deps(elixir_deps, shared_deps_opts) do
+    map_fun =
+      fn
+        {dep, ver} ->
+          case Keyword.fetch(shared_deps_opts, dep) do
+            {:ok, ex_opts} -> {dep, to_string(ver), ex_opts}
+            :error -> {dep, to_string(ver)}
+          end
+
+        {dep, ver, opts} ->
+          case Keyword.fetch(shared_deps_opts, dep) do
+            {:ok, ex_opts} -> {dep, to_string(ver), ex_opts}
+            :error -> {dep, to_string(ver), opts}
+          end
+      end
+
+    rebar_key!(:deps)
+    |> Enum.map(map_fun)
+    |> Enum.concat(elixir_deps)
   end
 end
