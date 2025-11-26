@@ -15,6 +15,7 @@ defmodule TemporalSdkSamples.MixProject do
       app: app_name!(),
       version: version(),
       elixir: "~> 1.17",
+      aliases: aliases(),
       deps: deps(@elixir_deps, @shared_deps_opts),
       erlc_options: rebar_key!(:erl_opts),
       test_paths: ["test_ex"],
@@ -38,17 +39,27 @@ defmodule TemporalSdkSamples.MixProject do
 
   defp version, do: app_key!(:vsn) |> to_string
 
+  defp version_tag(_), do: IO.puts("v#{version()}")
+
+  defp aliases,
+    do: [
+      version_tag: &version_tag/1
+    ]
+
   defp package,
     do: [
       licenses: ["MIT"],
-      links: %{"GitHub" => @source_url},
-      files: ["LICENSE*", "README*"]
+      links: %{
+        "GitHub" => @source_url,
+        "Changelog" => "#{@source_url}/blob/main/CHANGELOG.md"
+      },
+      files: ["LICENSE*", "README.md", "CHANGELOG.md"]
     ]
 
   defp docs,
     do: [
       output: "_doc",
-      extras: ["README.md"],
+      extras: ["README.md", "CHANGELOG.md"],
       main: "readme",
       source_url: @source_url,
       source_ref: "v#{version()}",
