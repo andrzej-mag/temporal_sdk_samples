@@ -1,0 +1,9 @@
+import Config
+
+config :temporal_sdk,
+  clusters: [
+    cluster_1: [
+      activities: [%{:task_queue => "default"}],
+      workflows: [%{:task_queue => "default"}]
+    ]
+  ]

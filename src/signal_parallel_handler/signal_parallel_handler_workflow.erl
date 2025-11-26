@@ -26,7 +26,6 @@ execute(Context, [Count]) when is_integer(Count), Count >= 0 ->
     start_execution(report_signal_handler),
     start_execution(signal_counter_handler, Count).
 
-%% "report" signal logic is implemented as a separate parallel handler for educational purposes.
 report_signal_handler(_Context, _Input) ->
     case await_all([{signal_request, ?REPORT_SIGNAL}, {info, signal_count}]) of
         {ok, [#{}, Count]} ->

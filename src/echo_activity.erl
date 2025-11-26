@@ -1,26 +1,7 @@
 -module(echo_activity).
 
-% elp:ignore W0012 W0040
--moduledoc """
-"echo" activity used across samples.
-
-Activity can be started with a following input variants:
-* `[Echo]` - where `Echo` is any Erlang term that can be converted with current payload codec.
-  `Echo` value is returned as activity result,
-* `[Echo, SleepTime]` - activity will run `timer:sleep(SleepTime)` command pretendig of doing some
-  work,
-* `[Echo, SleepTime, FailedAttempts]` - activity execution will fail with
-  `throw("Test echo_activity failure")` for `FailedAttempts` count.
-
-If `byte_size(Echo) > 10_000` or `length(Echo) > 3_300` activity returns `~"large_payload"`
-as a result.
-
-Example:
-```erlang
-start_activity(echo_activity, ["echo", 10_000, 3])
-```
-
-""".
+% elp:ignore W0012 W0040 E1599
+-moduledoc {file, "../docs/echo_activity.md"}.
 
 -export([
     execute/2,
@@ -37,7 +18,7 @@ execute(#{task := #{attempt := Attempt}}, [_Echo, SleepTime, FailedAttempts]) wh
     is_integer(SleepTime), is_integer(FailedAttempts), Attempt < FailedAttempts
 ->
     timer:sleep(SleepTime),
-    throw("Test echo_activity failure");
+    throw("Test echo_activity throw");
 execute(_Context, [Echo, SleepTime, FailedAttempts]) when
     is_integer(SleepTime), is_integer(FailedAttempts)
 ->
