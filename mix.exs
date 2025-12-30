@@ -58,7 +58,7 @@ defmodule TemporalSdkSamples.MixProject do
   defp docs,
     do: [
       output: "_doc",
-      extras: ["README.md", "CHANGELOG.md"],
+      extras: ["CHANGELOG.md", "README.md": [title: "Readme"]],
       main: "readme",
       source_url: @source_url,
       source_ref: "v#{version()}",

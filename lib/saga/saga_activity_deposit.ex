@@ -4,7 +4,7 @@ defmodule Saga.Activity.Deposit do
 
   @impl true
   def execute(_context, _input) do
-    Process.sleep(1_000)
+    Process.sleep(100)
     ["deposit"]
   end
 

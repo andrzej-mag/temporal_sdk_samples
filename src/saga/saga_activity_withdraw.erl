@@ -12,7 +12,7 @@
 -include_lib("temporal_sdk/include/activity.hrl").
 
 execute(_Context, _Input) ->
-    timer:sleep(1_000),
+    timer:sleep(100),
     ["withdraw"].
 
 handle_heartbeat(_Context) -> heartbeat.

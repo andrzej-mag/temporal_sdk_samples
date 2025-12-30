@@ -9,7 +9,7 @@ defmodule Saga.Activity.Compensation do
         #{inspect(compensation_state)}
     """)
 
-    Process.sleep(1_000)
+    Process.sleep(100)
     ["compensation"]
   end
 end

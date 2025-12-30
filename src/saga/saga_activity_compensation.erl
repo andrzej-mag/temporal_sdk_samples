@@ -11,5 +11,5 @@
 
 execute(_Context, [CompensationState, _TransferDetails]) ->
     io:fwrite("Compensation activity started with:~n    ~p~n~n", [CompensationState]),
-    timer:sleep(1_000),
+    timer:sleep(100),
     ["compensation"].
