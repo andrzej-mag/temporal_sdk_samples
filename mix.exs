@@ -21,10 +21,7 @@ defmodule TemporalSdkSamples.MixProject do
       test_paths: ["test_ex"],
       deps_path: "_deps",
       # hex.pm package metadata
-      description: """
-      Temporal Erlang and Elixir SDK samples.
-      (Dummy Hex package published solely to provide online documentation - do not use it as a dependency.)
-      """,
+      description: "Temporal Erlang and Elixir SDK samples. (dummy hexdocs-only package)",
       name: app_name!(),
       source_url: @source_url,
       package: package(),
@@ -73,6 +70,7 @@ defmodule TemporalSdkSamples.MixProject do
         ActivityHeartbeat,
         HelloWorld,
         QueryParallelHandler,
+        RateLimiter,
         Saga,
         SignalParallelHandler,
         SignalSimple
@@ -82,6 +80,7 @@ defmodule TemporalSdkSamples.MixProject do
         :echo_activity,
         :hello_world,
         :query_parallel_handler,
+        :rate_limiter,
         :saga,
         :signal_parallel_handler,
         :signal_simple
