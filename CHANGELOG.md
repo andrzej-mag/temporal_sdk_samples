@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.1.11](https://github.com/andrzej-mag/temporal_sdk_samples/compare/v0.1.1..v0.1.11) - 2026-01-16
+
+### 🚀 Features
+
+- Add rate limiter sample - ([f6bf1e9](https://github.com/andrzej-mag/temporal_sdk_samples/commit/f6bf1e9456f5e25e585f6097c74a000e4bef2e12))
+
+### 🐛 Bug Fixes
+
+- Elixir @external_resource docs fix - ([ef7bd72](https://github.com/andrzej-mag/temporal_sdk_samples/commit/ef7bd72fc137be3ec7b7a377c1731a09d379b69e))
+- Fix Saga sample - ([0fe6f5f](https://github.com/andrzej-mag/temporal_sdk_samples/commit/0fe6f5f647b5c0cc5de04bc390068a29b995ded6))
+- Update hex package description - ([018995d](https://github.com/andrzej-mag/temporal_sdk_samples/commit/018995dd93b63eeb125eac48dbc95160528d2de4))
+
+### 📚 Documentation
+
+- Improve signal_parallel_handler docs - ([23413e7](https://github.com/andrzej-mag/temporal_sdk_samples/commit/23413e7dd2c5d2a0a96b9cac64ff38cac8011744))
+- Improve rate limiter docs - ([cb8c894](https://github.com/andrzej-mag/temporal_sdk_samples/commit/cb8c894a7652f8e81cce43f95023c788f705b639))
+- Improve README - ([bc8b069](https://github.com/andrzej-mag/temporal_sdk_samples/commit/bc8b06955629af7e9596ef3d73305175e0037b8d))
+
 ## [0.1.1](https://github.com/andrzej-mag/temporal_sdk_samples/compare/v0.1.0..v0.1.1) - 2025-11-26
 
 ### 🚀 Features
