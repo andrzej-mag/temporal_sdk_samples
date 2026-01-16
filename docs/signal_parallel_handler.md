@@ -1,4 +1,5 @@
-Example signal parallel handler.
+Example signal parallel handler with `continue_as_new_workflow` command executed on
+`suggest_continue_as_new` event.
 
 Example workflow execution performs following tasks:
 
