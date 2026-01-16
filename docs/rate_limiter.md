@@ -1,11 +1,21 @@
-Rate limiter dynamic configuration with dynamic activity task worker.
+Rate limiter dynamic configuration with dynamic activity task worker sample.
 
-Sample defines a workflow that schedules 10 regular activities in parallel.
+SDK provides the following rate limiters:
+
+- OS rate limiter,
+- concurrency and fixed window rate limiters at the SDK node, SDK cluster and task worker levels,
+- task worker task poller leaky bucket rate limiter.
+
+Refer to the `m:temporal_sdk_limiter` documentation for more details.
+This sample is narrowed to the concurrency rate limiter at the task worker level.
+Other rate limiters can be managed in a similar manner to the approach presented here.
+
+Sample implements a Temporal workflow definition that schedules 10 regular activities in parallel.
 Each activity takes 1 second to execute.
 Activities are scheduled on a dedicated activity task queue.
 A dynamic activity task worker is started to process tasks from that queue.
-Activity task worker rate limiter limits are dynamically updated in the example run below.
-Initial activity task worker rate limiter limits are set to unlimited.
+Activity task worker concurrency rate limiter limits are dynamically updated in the example commands below.
+Initial activity task worker concurrency rate limiter limits are set to unlimited.
 
 Sample utilizes simple syntactic sugar wrappers built upon task worker module functions, refer to the
 sample source code for implementation details:
@@ -15,7 +25,8 @@ sample source code for implementation details:
 - Erlang:
   [src/rate_limiter](https://github.com/andrzej-mag/temporal_sdk_samples/tree/main/src/rate_limiter)
 
-Start activity task worker `"limited_worker"` running on `"limited_tq"` task queue:
+Start activity task worker `"limited_worker"` polling activity tasks from `"limited_tq"` activity task queue:
+
 <!-- tabs-open -->
 ### Elixir
 
@@ -73,7 +84,7 @@ iex(1)> RateLimiter.start_worker()
 ```
 <!-- tabs-close -->
 
-Start workflow execution without rate limiting:
+Start workflow execution without rate limiting and await workflow execution completion:
 
 <!-- tabs-open -->
 ### Elixir
@@ -111,12 +122,13 @@ Workflow completed in 1050 msec.
 ```
 <!-- tabs-close -->
 
-Workflow executes 10 activities concurrently with no rate limiting restrictions.
-As a single activity executes in 1000 milliseconds and all activities are executed concurrently without
-restrictions, workflow execution duration is 1x1000 milliseconds plus overhead.
+Workflow executes 10 activities in parallel without rate limiting.
+A single activity takes 1000 milliseconds to execute.
+Because all activities are executed without concurrency limits, the total workflow execution time is
+1x1000 milliseconds plus overhead.
 Activities execution order is determined by the polling order of activity tasks.
 
-Set the activity task worker regular activities concurrency limits to 1 for the "limited_worker":
+Set the activity task worker regular activities concurrency limits to 1 for the `"limited_worker"`:
 
 <!-- tabs-open -->
 ### Elixir
@@ -138,7 +150,7 @@ ok
 ```
 <!-- tabs-close -->
 
-Start workflow execution again, this time with restricted concurrency limits:
+Start a new workflow execution, this time with activity concurrency restricted to one:
 
 <!-- tabs-open -->
 ### Elixir
@@ -176,8 +188,30 @@ Workflow completed in 11055 msec.
 ```
 <!-- tabs-close -->
 
-Activity task worker `"limited_worker"` is limited to executing only one activity task concurrently.
-Workflow execution duration is 10x1000 milliseconds plus overhead.
+Activity task worker `"limited_worker"` is limited to executing one activity task concurrently.
+Workflow execution time is 10x1000 milliseconds plus overhead.
+
+Experiment with different activity task worker rate limiter concurrency limits:
+
+<!-- tabs-open -->
+### Elixir
+
+```elixir
+iex(6)> RateLimiter.set_worker_concurrency_limit(5)
+:ok
+iex(7)> RateLimiter.start()
+...
+```
+
+### Erlang
+
+```erlang
+6> rate_limiter:set_worker_concurrency_limit(5).
+ok
+7> rate_limiter:start().
+...
+```
+<!-- tabs-close -->
 
 Optionally terminate dynamic activity task worker:
 
@@ -185,17 +219,17 @@ Optionally terminate dynamic activity task worker:
 ### Elixir
 
 ```elixir
-iex(6)> RateLimiter.terminate_worker()
+iex(8)> RateLimiter.terminate_worker()
 :ok
 ```
 
 ### Erlang
 
 ```erlang
-6> rate_limiter:terminate_worker().
+8> rate_limiter:terminate_worker().
 ok
 ```
 <!-- tabs-close -->
 
-NOTE: The activity task worker `task_poller_pool_size` configuration option is set to 1 because we
-limit task concurrency to small values.
+NOTE: The `"limited_worker"` activity task worker `task_poller_pool_size` configuration option is set
+to 1 because the task poller pool size must be less than or equal to the concurrency limits.
