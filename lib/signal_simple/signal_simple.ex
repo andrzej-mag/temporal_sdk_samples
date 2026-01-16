@@ -1,4 +1,5 @@
 defmodule SignalSimple do
+  @external_resource "docs/signal_simple.md"
   @moduledoc File.read!("docs/signal_simple.md")
 
   @cluster :cluster_1

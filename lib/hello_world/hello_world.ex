@@ -1,4 +1,5 @@
 defmodule HelloWorld do
+  @external_resource "docs/hello_world.md"
   @moduledoc File.read!("docs/hello_world.md")
 
   def start do

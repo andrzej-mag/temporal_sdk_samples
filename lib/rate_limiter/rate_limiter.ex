@@ -1,4 +1,5 @@
 defmodule RateLimiter do
+  @external_resource "docs/rate_limiter.md"
   @moduledoc File.read!("docs/rate_limiter.md")
 
   @worker_id "limited_worker"

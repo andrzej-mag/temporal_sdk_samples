@@ -1,4 +1,5 @@
 defmodule ActivityHeartbeat do
+  @external_resource "docs/activity_heartbeat.md"
   @moduledoc File.read!("docs/activity_heartbeat.md")
 
   @stage_durations [3_000, 4_000, 5_000]

@@ -1,4 +1,5 @@
 defmodule SignalParallelHandler do
+  @external_resource "docs/signal_parallel_handler.md"
   @moduledoc File.read!("docs/signal_parallel_handler.md")
 
   @cluster :cluster_1

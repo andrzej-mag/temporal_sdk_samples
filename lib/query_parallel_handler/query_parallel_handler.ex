@@ -1,4 +1,5 @@
 defmodule QueryParallelHandler do
+  @external_resource "docs/query_parallel_handler.md"
   @moduledoc File.read!("docs/query_parallel_handler.md")
 
   @progress_query <<"get_progress">>
