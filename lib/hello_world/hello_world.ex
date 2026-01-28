@@ -5,7 +5,7 @@ defmodule HelloWorld do
   def start do
     TemporalSdk.start_workflow(:cluster_1, "default", HelloWorld.Workflow, [
       :wait,
-      input: ["from Temporal"]
+      input: [["from Temporal"]]
     ])
   end
 end

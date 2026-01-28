@@ -3,5 +3,5 @@ defmodule HelloWorld.Activity do
   @moduledoc false
 
   @impl true
-  def execute(_context, [string]), do: [String.upcase(string)]
+  def execute(_context, [[string]]), do: [[String.upcase(string)]]
 end
