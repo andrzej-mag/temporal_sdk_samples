@@ -69,6 +69,7 @@ defmodule TemporalSdkSamples.MixProject do
       "Elixir": [
         ActivityHeartbeat,
         HelloWorld,
+        PayloadCodec,
         QueryParallelHandler,
         RateLimiter,
         Saga,
@@ -79,6 +80,7 @@ defmodule TemporalSdkSamples.MixProject do
         :activity_heartbeat,
         :echo_activity,
         :hello_world,
+        :payload_codec,
         :query_parallel_handler,
         :rate_limiter,
         :saga,
