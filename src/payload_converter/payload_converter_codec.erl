@@ -1,4 +1,4 @@
--module(payload_codec_codec).
+-module(payload_converter_codec).
 -behaviour(temporal_sdk_codec_payload).
 
 -moduledoc false.

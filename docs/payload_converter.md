@@ -23,7 +23,7 @@ Example run:
 ### Elixir
 
 ```elixir
-iex(1)> PayloadCodec.start_default()
+iex(1)> PayloadConverter.start_default()
 HELLO WORLD from Temporal
 
 {%{
@@ -36,7 +36,7 @@ HELLO WORLD from Temporal
  },
  {:completed,
   %{result: [], workflow_task_completed_event_id: 13, new_execution_run_id: ""}}}
-iex(2)> PayloadCodec.start_encrypted()
+iex(2)> PayloadConverter.start_encrypted()
 HELLO WORLD from Temporal
 
 {%{
@@ -51,10 +51,13 @@ HELLO WORLD from Temporal
   %{result: [], workflow_task_completed_event_id: 13, new_execution_run_id: ""}}}
 ```
 
+Sample source:
+[lib/payload_converter](https://github.com/andrzej-mag/temporal_sdk_samples/tree/main/lib/payload_converter)
+
 ### Erlang
 
 ```erlang
-1> payload_codec:start_default().
+1> payload_converter:start_default().
 HELLO WORLD from Temporal
 
 {#{started => true,
@@ -65,7 +68,7 @@ HELLO WORLD from Temporal
          run_id => <<"019c04d5-1cf9-7b8c-a543-c23d633146d1">>}},
  {completed,#{result => [],workflow_task_completed_event_id => 13,
               new_execution_run_id => <<>>}}}
-2> payload_codec:start_encrypted().
+2> payload_converter:start_encrypted().
 HELLO WORLD from Temporal
 
 {#{started => true,
@@ -78,8 +81,14 @@ HELLO WORLD from Temporal
               new_execution_run_id => <<>>}}}
 ```
 
+Sample source:
+[src/payload_converter](https://github.com/andrzej-mag/temporal_sdk_samples/tree/main/src/payload_converter)
+
 <!-- tabs-close -->
 
-Payloads for both workflow executions can be compared using the Temporal Web UI.
+Payloads for both plain and encrypted workflow executions can be compared using the Temporal Web UI.
 
-See also: [Temporal Codec Server](https://docs.temporal.io/codec-server).
+See also:
+
+- [Temporal Codec Server](https://docs.temporal.io/codec-server),
+- `temporal_sdk_api:from_payload_mapper/5` and `temporal_sdk_api:to_payload_mapper/5`.

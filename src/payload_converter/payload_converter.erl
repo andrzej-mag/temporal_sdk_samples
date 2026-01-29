@@ -1,7 +1,7 @@
--module(payload_codec).
+-module(payload_converter).
 
 % elp:ignore W0012 W0040 E1599
--moduledoc {file, "../../docs/payload_codec.md"}.
+-moduledoc {file, "../../docs/payload_converter.md"}.
 
 -export([
     start_default/0,
