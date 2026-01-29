@@ -10,10 +10,10 @@
 
 start_default() ->
     temporal_sdk:start_workflow(cluster_1, "default", hello_world_workflow, [
-        wait, {input, ["from Temporal"]}, {workflow_id, "plain"}
+        wait, {input, [[~b"from Temporal"]]}, {workflow_id, "plain"}
     ]).
 
 start_encrypted() ->
     temporal_sdk:start_workflow(cluster_1_enc, "encrypted", hello_world_workflow, [
-        wait, {input, ["from Temporal"]}, {workflow_id, "encrypted"}
+        wait, {input, [[~b"from Temporal"]]}, {workflow_id, "encrypted"}
     ]).

@@ -7,4 +7,4 @@
 
 -include_lib("temporal_sdk/include/activity.hrl").
 
-execute(_Context, [String]) -> [string:uppercase(String)].
+execute(_Context, [[String]]) -> [[string:uppercase(String)]].

@@ -9,5 +9,5 @@
 
 start() ->
     temporal_sdk:start_workflow(cluster_1, "default", hello_world_workflow, [
-        wait, {input, ["from Temporal"]}
+        wait, {input, [[~b"from Temporal"]]}
     ]).
