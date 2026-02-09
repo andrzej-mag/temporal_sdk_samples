@@ -1,5 +1,25 @@
 # Changelog
 
+## [0.1.12](https://github.com/andrzej-mag/temporal_sdk_samples/compare/v0.1.11..v0.1.12) - 2026-02-09
+
+### 🚀 Features
+
+- Add codec opts to payload_codec - ([f5c37ab](https://github.com/andrzej-mag/temporal_sdk_samples/commit/f5c37abe28a734a404aa68c84cf6b0ea5e7aabcf))
+- Add Payload Codec sample - ([4cb954d](https://github.com/andrzej-mag/temporal_sdk_samples/commit/4cb954d48685bfd21cb7cf44b816cc165852ba2b))
+
+### 🐛 Bug Fixes
+
+- Fix hello_world sample - ([ddacb2b](https://github.com/andrzej-mag/temporal_sdk_samples/commit/ddacb2bb831915fb427a0cf7fe34f5bd0ae13afe))
+- Fix HelloWorld sample - ([bf7e406](https://github.com/andrzej-mag/temporal_sdk_samples/commit/bf7e4066362faa982f5b8e75019afb8610ce2fdd))
+
+### 🚜 Refactor
+
+- Rename payload_codec to payload_converter - ([8c7eadf](https://github.com/andrzej-mag/temporal_sdk_samples/commit/8c7eadf3cc54720b40ea6129ed7a3193c484d4af))
+
+### ⚙️ Miscellaneous
+
+- Bump SDK to v0.1.15 - ([0173242](https://github.com/andrzej-mag/temporal_sdk_samples/commit/017324244de3408e53837347db58c1171c3d6825))
+
 ## [0.1.11](https://github.com/andrzej-mag/temporal_sdk_samples/compare/v0.1.1..v0.1.11) - 2026-01-16
 
 ### 🚀 Features
