@@ -11,10 +11,6 @@ config :temporal_sdk,
         grpc_opts: [
           converter:
             {:temporal_sdk_proto_converter, [{:payload_converter_codec, [:compressed], [:safe]}]}
-        ],
-        grpc_opts_longpoll: [
-          converter:
-            {:temporal_sdk_proto_converter, [{:payload_converter_codec, [:compressed], [:safe]}]}
         ]
       ],
       activities: [[task_queue: "encrypted"]],
