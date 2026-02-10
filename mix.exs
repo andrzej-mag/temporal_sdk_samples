@@ -85,7 +85,8 @@ defmodule TemporalSdkSamples.MixProject do
         :rate_limiter,
         :saga,
         :signal_parallel_handler,
-        :signal_simple
+        :signal_simple,
+        :worker_benchmark
       ]
     ]
 
