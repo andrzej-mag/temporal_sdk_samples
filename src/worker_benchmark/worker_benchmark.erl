@@ -14,20 +14,21 @@
 start() ->
     start(self(), 1, 0).
 
-start(Pid, LoopId, TAcc) when LoopId =< ?LOOP_COUNT ->
-    io:fwrite("Run ~b of ~b.~n", [LoopId, ?LOOP_COUNT]),
+start(Pid, LoopId, Acc) when LoopId =< ?LOOP_COUNT ->
     StartTime = erlang:system_time(nanosecond),
     [spawn(fun() -> run_worker(Pid, RunId) end) || RunId <- lists:seq(1, ?PARALLEL_COUNT)],
     case receive_results([]) of
         ok ->
             Duration = erlang:system_time(nanosecond) - StartTime,
+            WPS = round(?PARALLEL_COUNT / Duration * 1.0E9),
+            io:fwrite("Run ~b of ~b. Workers per second: ~b.~n", [LoopId, ?LOOP_COUNT, WPS]),
             timer:sleep(?SLEEP_TIME),
-            start(Pid, LoopId + 1, TAcc + Duration);
+            start(Pid, LoopId + 1, Acc + WPS);
         Err ->
             Err
     end;
-start(_Pid, _LoopId, Time) ->
-    io:fwrite("Workers per second: ~b.~n", [round(?PARALLEL_COUNT * ?LOOP_COUNT / Time * 1.0E9)]).
+start(_Pid, _LoopId, WPS) ->
+    io:fwrite("Average workers per second: ~b.~n", [round(WPS / ?LOOP_COUNT)]).
 
 run_worker(Pid, RunId) ->
     %% The same task queue is used across consecutive runs to avoid violating Temporal server task
