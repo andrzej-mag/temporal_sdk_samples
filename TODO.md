@@ -1,5 +1,3 @@
-Event handler + event_iterator.
-
 Replay benchmark.
 
 Handling OTP messages in activity task.

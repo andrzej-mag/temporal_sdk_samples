@@ -68,17 +68,20 @@ defmodule TemporalSdkSamples.MixProject do
     do: [
       "Elixir": [
         ActivityHeartbeat,
+        EventHandler,
         HelloWorld,
         PayloadConverter,
         QueryParallelHandler,
         RateLimiter,
         Saga,
         SignalParallelHandler,
-        SignalSimple
+        SignalSimple,
+        WorkerBenchmark
       ],
       Erlang: [
         :activity_heartbeat,
         :echo_activity,
+        :event_handler,
         :hello_world,
         :payload_converter,
         :query_parallel_handler,
