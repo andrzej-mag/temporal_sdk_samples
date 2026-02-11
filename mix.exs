@@ -13,6 +13,7 @@ defmodule TemporalSdkSamples.MixProject do
   def project,
     do: [
       app: app_name!(),
+      elixirc_options: [warnings_as_errors: true],
       version: version(),
       elixir: "~> 1.17",
       aliases: aliases(),
