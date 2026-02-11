@@ -77,7 +77,8 @@ defmodule TemporalSdkSamples.MixProject do
         Saga,
         SignalParallelHandler,
         SignalSimple,
-        WorkerBenchmark
+        WorkerBenchmark,
+        WorkflowBenchmark
       ],
       Erlang: [
         :activity_heartbeat,
@@ -90,7 +91,8 @@ defmodule TemporalSdkSamples.MixProject do
         :saga,
         :signal_parallel_handler,
         :signal_simple,
-        :worker_benchmark
+        :worker_benchmark,
+        :workflow_benchmark
       ]
     ]
 
