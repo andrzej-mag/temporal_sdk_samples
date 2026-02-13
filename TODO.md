@@ -1,5 +1,3 @@
-Replay benchmark.
-
 Handling OTP messages in activity task.
 
 Session activity sample.
