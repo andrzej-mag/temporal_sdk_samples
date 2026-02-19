@@ -9,7 +9,12 @@
 
 -spec start(
     TaskType ::
-        activity | regular_execution_activity | eager_execution_activity | marker | recorded_marker
+        activity
+        | regular_execution_activity
+        | eager_execution_activity
+        | activity_await_cmd
+        | marker
+        | recorded_marker
 ) ->
     ok.
 start(TaskType) ->

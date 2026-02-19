@@ -23,7 +23,7 @@ execute(#{is_replaying := IsR1}, [[TaskType]]) when is_binary(TaskType) ->
     TPS = round(?TASK_COUNT / Duration * 1_000_000_000),
     EPS = round(EId / Duration * 1_000_000_000),
     %% Additional activity is started exclusively to ensure proper IsR2 value:
-    wait(start_activity(echo_activity, [[]])),
+    #{result := [123.456]} = start_activity(echo_activity, [123.456], [wait]),
     case {IsR1, IsR2} of
         {false, false} ->
             io:fwrite("EXECUTION: ~b commands per second, ~p events per second.~n~n", [TPS, EPS]),
@@ -58,8 +58,13 @@ run_tasks(~"activity_await_cmd", Seq) ->
         ])
      || I <- Seq
     ],
-    wait_all(Tasks),
-    true;
+    lists:all(
+        fun
+            (#{state := cmd}) -> true;
+            (_) -> false
+        end,
+        wait_all(Tasks)
+    );
 run_tasks(~"marker", Seq) ->
     Tasks = [
         record_marker(fun() -> [I] end, [{marker_name, integer_to_list(I)}])
