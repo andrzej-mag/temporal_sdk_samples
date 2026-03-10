@@ -4,14 +4,19 @@
 -moduledoc {file, "../../docs/workflow_cancel.md"}.
 
 -export([
-    start/0
+    run/1
 ]).
 
-start() ->
+-spec run(CancellationType :: cancel_all | cancel_await | cancel_abandon | atom()) ->
+    temporal_sdk:workflow_result() | no_return().
+run(CancellationType) when is_atom(CancellationType) ->
     {ok, #{workflow_execution := WE}} = temporal_sdk:start_workflow(
         cluster_1, "default", workflow_cancel_workflow
     ),
     %% Some other work simulated by timer:sleep/1
     timer:sleep(1_000),
-    {ok, #{}} = temporal_sdk_service:cancel_workflow(cluster_1, WE, [{reason, ~"CANCEL ALL"}]),
-    temporal_sdk:await_workflow(cluster_1, WE).
+    {ok, #{}} = temporal_sdk_service:cancel_workflow(cluster_1, WE, [
+        {reason, atom_to_binary(CancellationType)}
+    ]),
+    {ok, Result} = temporal_sdk:await_workflow(cluster_1, WE),
+    Result.
