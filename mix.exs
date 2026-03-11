@@ -69,6 +69,7 @@ defmodule TemporalSdkSamples.MixProject do
     do: [
       "Elixir": [
         ActivityHeartbeat,
+        DeterminismCheck,
         EventHandler,
         HelloWorld,
         PayloadConverter,
@@ -79,10 +80,12 @@ defmodule TemporalSdkSamples.MixProject do
         SignalParallelHandler,
         SignalSimple,
         WorkerBenchmark,
+        WorkflowCancel,
         WorkflowBenchmark
       ],
       Erlang: [
         :activity_heartbeat,
+        :determinism_check,
         :echo_activity,
         :event_handler,
         :hello_world,
@@ -94,6 +97,7 @@ defmodule TemporalSdkSamples.MixProject do
         :signal_parallel_handler,
         :signal_simple,
         :worker_benchmark,
+        :workflow_cancel,
         :workflow_benchmark
       ]
     ]
