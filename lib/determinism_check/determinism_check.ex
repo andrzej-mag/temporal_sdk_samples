@@ -28,29 +28,29 @@ defmodule DeterminismCheck do
   @doc false
   def is_deterministic(
         {actual_awaitable, %{event_id: event_id, state: actual_state}},
-        {received_awaitable, %{event_id: event_id, state: received_state}},
+        {replayed_awaitable, %{event_id: event_id, state: replayed_state}},
         _actual_command,
-        _received_history_event
+        _replayed_history_event
       ),
       do:
-        test_state(actual_state, received_state) and
-          test_awaitable(actual_awaitable, received_awaitable)
+        test_state(actual_state, replayed_state) and
+          test_awaitable(actual_awaitable, replayed_awaitable)
 
   def is_deterministic(
         _actual_awaitable,
-        _received_awaitable,
+        _replayed_awaitable,
         _actual_command,
-        _received_history_event
+        _replayed_history_event
       ),
       do: false
 
   defp test_state(:cmd, _state), do: true
   defp test_state(:started, :canceled), do: true
   defp test_state(state, state), do: true
-  defp test_state(_actual_state, _received_state), do: false
+  defp test_state(_actual_state, _replayed_state), do: false
 
   defp test_awaitable({a}, {a}), do: true
   defp test_awaitable({a, _}, {a, _}), do: true
   defp test_awaitable({a, at, _}, {a, at, _}), do: true
-  defp test_awaitable(_actual_awaitable, _received_awaitable), do: false
+  defp test_awaitable(_actual_awaitable, _replayed_awaitable), do: false
 end
