@@ -1,5 +1,32 @@
 # Changelog
 
+## [0.1.13](https://github.com/andrzej-mag/temporal_sdk_samples/compare/v0.1.12..v0.1.13) - 2026-03-16
+
+### 🚀 Features
+
+- Add Child Workflow sample - ([a176ae4](https://github.com/andrzej-mag/temporal_sdk_samples/commit/a176ae4f959966c72e0ac8d21fec282254e672ab))
+- Add Replay Test sample - ([a70fa12](https://github.com/andrzej-mag/temporal_sdk_samples/commit/a70fa1246bf6f79f4c50bacdec0fa50743fbfb8d))
+- Add Determinism Check sample - ([0a04c40](https://github.com/andrzej-mag/temporal_sdk_samples/commit/0a04c40cf0247034d1747994421c4530f1e78689))
+- Improve Workflow Cancel sample - ([01e8ac5](https://github.com/andrzej-mag/temporal_sdk_samples/commit/01e8ac505cbd6bec05f4dbdb59a9c40d58c90a41))
+- Add Workflow Cancel sample - ([1a855c9](https://github.com/andrzej-mag/temporal_sdk_samples/commit/1a855c9cca40a2c8af3689f92d419afd2cc52e27))
+- Extend Replay Benchmark sample - ([8a2ed4f](https://github.com/andrzej-mag/temporal_sdk_samples/commit/8a2ed4fb5ff79c9ab96acb9251543fbcd381456c))
+- Add Replay Benchmark sample - ([540bc47](https://github.com/andrzej-mag/temporal_sdk_samples/commit/540bc47418543c0e734f53f1637e66e2b4096c06))
+- Add EagerExecution and PoolSize to workflow_benchmark - ([3dbd7d0](https://github.com/andrzej-mag/temporal_sdk_samples/commit/3dbd7d08f9405f22c0e7aedefb1bf63fbb7ccd00))
+- Add Workflow Benchmark sample - ([b50b9dc](https://github.com/andrzej-mag/temporal_sdk_samples/commit/b50b9dcfce865fba917673982d4b193d62498476))
+- Add Event Handler sample - ([1755778](https://github.com/andrzej-mag/temporal_sdk_samples/commit/1755778ff3454945504d26efbb3ee00ef8eb3fa7))
+- Add worker_benchmark sample - ([3543d51](https://github.com/andrzej-mag/temporal_sdk_samples/commit/3543d515f73c77e5309fcae20147504745c40b53))
+
+### 🐛 Bug Fixes
+
+- Fix Determinism Check sample var names - ([a697c44](https://github.com/andrzej-mag/temporal_sdk_samples/commit/a697c44615e7b927495540b035c2771a25fc495e))
+- Fix replay_benchmark sample - ([98e8853](https://github.com/andrzej-mag/temporal_sdk_samples/commit/98e8853d02257a760820a6a79660b5d76d24ee3c))
+
+### ⚙️ Miscellaneous
+
+- Add elixirc_options: [warnings_as_errors: true] - ([23a8bcf](https://github.com/andrzej-mag/temporal_sdk_samples/commit/23a8bcfb1cfae73c51cff14f1ce430a7a0db9a5d))
+- Improve Worker Benchmark sample - ([b549bf1](https://github.com/andrzej-mag/temporal_sdk_samples/commit/b549bf1f8e8b899023e7713b4000e087c3185218))
+- Add TODO.md - ([7c19938](https://github.com/andrzej-mag/temporal_sdk_samples/commit/7c199386c1dede0339b4c5817bb37183a6507055))
+
 ## [0.1.12](https://github.com/andrzej-mag/temporal_sdk_samples/compare/v0.1.11..v0.1.12) - 2026-02-09
 
 ### 🚀 Features
