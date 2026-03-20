@@ -1,6 +1,6 @@
 defmodule ChildWorkflow do
   @external_resource "docs/child_workflow.md"
-  @moduledoc File.read!("docs/child_workflow.md")
+  @moduledoc TemporalSdk.Utils.exdoc!("docs/child_workflow.md")
 
   @spec run(child_workflow_outcome :: :complete | :cancel | :fail | :invalid | atom()) ::
           :temporal_sdk.workflow_result() | no_return()

@@ -1,6 +1,6 @@
 defmodule WorkflowCancel do
   @external_resource "docs/workflow_cancel.md"
-  @moduledoc File.read!("docs/workflow_cancel.md")
+  @moduledoc TemporalSdk.Utils.exdoc!("docs/workflow_cancel.md")
 
   @spec run(cancellation_type :: :cancel_all | :cancel_await | :cancel_abandon | atom()) ::
           :temporal_sdk.workflow_result() | no_return()

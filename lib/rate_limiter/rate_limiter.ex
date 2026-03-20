@@ -1,6 +1,6 @@
 defmodule RateLimiter do
   @external_resource "docs/rate_limiter.md"
-  @moduledoc File.read!("docs/rate_limiter.md")
+  @moduledoc TemporalSdk.Utils.exdoc!("docs/rate_limiter.md")
 
   @worker_id "limited_worker"
   @frequency_limit 1_000
