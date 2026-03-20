@@ -134,6 +134,9 @@ defmodule TemporalSdkSamples.MixProject do
   defp deps(elixir_deps, shared_deps_opts) do
     map_fun =
       fn
+        {dep, {proto, addr}} ->
+          {dep, [{proto, to_string(addr)}]}
+
         {dep, ver} ->
           case Keyword.fetch(shared_deps_opts, dep) do
             {:ok, ex_opts} -> {dep, to_string(ver), ex_opts}
