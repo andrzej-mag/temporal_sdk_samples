@@ -8,8 +8,6 @@ Workflow eviction.
 
 Large payload sample.
 
-Suggest_continue_as_new with activities.
-
 Pubsub sample based on process groups.
 
 Phoenix LiveView pubsub.

@@ -17,22 +17,19 @@ execute(_Context, _Input) ->
 
     #{result := [A1R]} = start_activity(echo_activity, [[~"first_activity"]], [wait]),
     #{mutations_count := MC, value := [MV]} =
-        record_env(?MUTABLE_MARKER, [wait, {mutable, #{mutations_limit => 5}}]),
+        record_os_env(?MUTABLE_MARKER, [wait, {mutable, #{mutations_limit => 5}}]),
     io:fwrite("Mutable Marker - mutations count: ~b, marker value: ~b.~n", [MC, MV]),
     A2 = start_activity(echo_activity, [[~"second_activity", MV], 3_000]),
 
-    %% Following code is used to emulate worker node restart and environmental variable mutation
+    %% Following code emulates 3 worker node restarts during workflow execution
     start_timer(1000, [wait]),
     case MC < 3 of
         true ->
-            await_open_before_close(false),
             terminate_executor();
-        _ ->
-            ok
-    end,
-
-    #{result := [A2R]} = wait(A2),
-    complete_workflow_execution([A1R, A2R]).
+        false ->
+            #{result := [A2R]} = wait(A2),
+            complete_workflow_execution([A1R, A2R])
+    end.
 
 mock_env() ->
     os:putenv(?MUTABLE_MARKER, integer_to_list(erlang:unique_integer([positive, monotonic]))).
