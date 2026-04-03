@@ -14,7 +14,7 @@ defmodule AwaitableEvent do
     case TemporalSdk.Worker.is_started(:cluster_1, :activity, :awaitable_event_activity) do
       false ->
         Process.sleep(worker_start_delay)
-        IO.puts("Start activity worker")
+        IO.puts("Start activity worker.")
 
         {:ok, %{}} =
           TemporalSdk.Worker.start(:cluster_1, :activity,
@@ -23,7 +23,7 @@ defmodule AwaitableEvent do
           )
 
       true ->
-        IO.puts("Activity worker already started")
+        IO.puts("Activity worker already started.")
     end
   end
 end
