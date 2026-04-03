@@ -33,22 +33,22 @@ Example run:
 
 ```elixir
 iex(1)> AwaitableEvent.run(0)
-Start activity worker
+Start activity worker.
 INFO: Activity started within 1000 msec timeout.
-<<"Activity completed.">>
+Activity completed.
 :ok
 #
 # Restart session here to terminate running activity worker
 #
 iex(1)> AwaitableEvent.run(2000)
 WARN: Activity NOT started within 1000 msec timeout.
-Start activity worker
-<<"Activity completed.">>
+Start activity worker.
+Activity completed.
 :ok
 iex(2)> AwaitableEvent.run(2000)
-Activity worker already started
+Activity worker already started.
 INFO: Activity started within 1000 msec timeout.
-<<"Activity completed.">>
+Activity completed.
 :ok
 ```
 

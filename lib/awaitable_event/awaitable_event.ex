@@ -5,7 +5,7 @@ defmodule AwaitableEvent do
   @spec run(worker_start_delay :: non_neg_integer()) :: :ok
   def run(worker_start_delay) do
     spawn(fn -> start_activity_worker(worker_start_delay) end)
-    TemporalSdk.start_workflow(:cluster_1, "default", :awaitable_event_workflow, [:wait])
+    TemporalSdk.start_workflow(:cluster_1, "default", AwaitableEvent.Workflow, [:wait])
     :ok
   end
 
