@@ -69,6 +69,7 @@ defmodule TemporalSdkSamples.MixProject do
     do: [
       "Elixir": [
         ActivityHeartbeat,
+        AwaitableEvent,
         ChildWorkflow,
         DeterminismCheck,
         EventHandler,
@@ -88,6 +89,7 @@ defmodule TemporalSdkSamples.MixProject do
       ],
       Erlang: [
         :activity_heartbeat,
+        :awaitable_event,
         :child_workflow,
         :determinism_check,
         :echo_activity,
