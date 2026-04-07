@@ -13,15 +13,14 @@ Successfully completed regular activity awaitable transitions through the follow
 See the `m:temporal_sdk_workflow` module documentation for more information on awaitables.
 
 Workflow used in this sample starts an `echo_activity` activity and sets its awaitable event to `start`.
-Awaiting this awaitable will block until the activity transitions to the `started` state, however
-transition to the `completed` state is not required.
+Awaiting such an activity will block until the activity transitions to at least the `started` state.
 
 Activity is started on the `"awaitable_event"` task queue.
 Activity awaitable with event set to `start` is awaited with a 1-second timeout. If the activity
 worker polling `"awaitable_event"` task queue is unavailable and activity execution does not start
 within the timeout, a `WARN` message is logged.
-Finally, the activity awaitable event is set to the closed state, and awaiting an
-awaitable in a closed state follows as in the most common use cases.
+Finally, the activity awaitable event is set to the closed state, and awaiting an awaitable in a closed
+state follows as in the typical use cases.
 
 Such a pattern can be useful, for example, when workflow logic requires prior knowledge of issues
 related to a given activity worker, without failing the activity through conventional activity timeouts.

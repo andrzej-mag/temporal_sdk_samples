@@ -4,18 +4,28 @@ defmodule AwaitableEvent.Workflow do
 
   @impl true
   def execute(_context, _input) do
-    a_start =
+    {:activity_start, a_id} =
+      a_start =
       start_activity(EchoActivity, [["Activity completed."]],
         task_queue: "awaitable_event",
         awaitable_event: :start
       )
 
-    case await(a_start, 1000) do
-      {:noevent, %{}} -> IO.puts("WARN: Activity NOT started within 1000 msec timeout.")
-      {:ok, %{}} -> IO.puts("INFO: Activity started within 1000 msec timeout.")
+    {await_status, %{}} = await(a_start, 1_000)
+    %{is_replaying: is_replaying} = workflow_info()
+
+    case {is_replaying, await_status} do
+      {true, _} ->
+        :ok
+
+      {false, :noevent} ->
+        IO.puts("WARN: Activity not started within 1000 msec timeout or nonexistent activity.")
+
+      {false, :ok} ->
+        IO.puts("INFO: Activity started within 1000 msec timeout.")
     end
 
-    a_close = :erlang.setelement(1, a_start, :activity)
+    a_close = {:activity, a_id}
     %{state: :completed, result: [[r]]} = wait(a_close)
     IO.puts(r)
   end

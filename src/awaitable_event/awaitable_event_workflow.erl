@@ -10,15 +10,23 @@
 -include_lib("temporal_sdk/include/workflow.hrl").
 
 execute(_Context, _Input) ->
-    AStart = start_activity(echo_activity, [[~"Activity completed."]], [
-        {task_queue, "awaitable_event"},
-        {awaitable_event, start}
-    ]),
-    case await(AStart, 1000) of
-        {noevent, #{}} -> io:fwrite("WARN: Activity NOT started within 1000 msec timeout.~n", []);
-        {ok, #{}} -> io:fwrite("INFO: Activity started within 1000 msec timeout.~n", [])
+    {activity_start, AId} =
+        AStart = start_activity(echo_activity, [[~"Activity completed."]], [
+            {task_queue, "awaitable_event"},
+            {awaitable_event, start}
+        ]),
+    {AwaitStatus, #{}} = await(AStart, 1_000),
+    #{is_replaying := IsReplaying} = workflow_info(),
+    case {IsReplaying, AwaitStatus} of
+        {true, _} ->
+            ok;
+        {false, noevent} ->
+            io:fwrite(
+                "WARN: Activity not started within 1000 msec timeout or nonexistent activity.~n", []
+            );
+        {false, ok} ->
+            io:fwrite("INFO: Activity started within 1000 msec timeout.~n", [])
     end,
-    % eqwalizer:ignore
-    AClose = setelement(1, AStart, activity),
-    #{state := completed, result := [[R]]} = wait(AClose),
-    io:fwrite("~p~n", [R]).
+    AClose = {activity, AId},
+    #{state := completed, result := [[AR]]} = wait(AClose),
+    io:fwrite("~p~n", [AR]).
