@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.15](https://github.com/andrzej-mag/temporal_sdk_samples/compare/v0.1.14..v0.1.15) - 2026-04-27
+
+### 🐛 Bug Fixes
+
+- Fix hex.pm git dependency - ([8c23e88](https://github.com/andrzej-mag/temporal_sdk_samples/commit/8c23e88c85e81a617bbfe49d8bd22aad114ad86b))
+
 ## [0.1.14](https://github.com/andrzej-mag/temporal_sdk_samples/compare/v0.1.13..v0.1.14) - 2026-04-27
 
 ### 🚀 Features
