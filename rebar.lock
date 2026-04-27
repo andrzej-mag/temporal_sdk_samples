@@ -4,10 +4,7 @@
  {<<"opentelemetry_api">>,{pkg,<<"opentelemetry_api">>,<<"1.5.0">>},1},
  {<<"quickrand">>,{pkg,<<"quickrand">>,<<"2.0.7">>},2},
  {<<"telemetry">>,{pkg,<<"telemetry">>,<<"1.4.1">>},1},
- {<<"temporal_sdk">>,
-  {git,"https://github.com/andrzej-mag/temporal_sdk",
-       {ref,"69d16d65575482c2e8a798e430ab419f5c9bd297"}},
-  0},
+ {<<"temporal_sdk">>,{pkg,<<"temporal_sdk">>,<<"0.1.18">>},0},
  {<<"uuid">>,{pkg,<<"uuid_erl">>,<<"2.0.7">>},1}]}.
 [
 {pkg_hash,[
@@ -16,6 +13,7 @@
  {<<"opentelemetry_api">>, <<"1A676F3E3340CAB81C763E939A42E11A70C22863F645AA06AAFEFC689B5550CF">>},
  {<<"quickrand">>, <<"D2BD76676A446E6A058D678444B7FDA1387B813710D1AF6D6E29BB92186C8820">>},
  {<<"telemetry">>, <<"AB6DE178E2B29B58E8256B92B382EA3F590A47152CA3651EA857A6CAE05AC423">>},
+ {<<"temporal_sdk">>, <<"DEAB8DA270E9AB9F33A554C02C00A4551453AE8A9A298EB76B0A6F25EABC1CC0">>},
  {<<"uuid">>, <<"B2078D2CC814F53AFA52D36C91E08962C7E7373585C623F4C0EA6DFB04B2AF94">>}]},
 {pkg_hash_ext,[
  {<<"cowlib">>, <<"E1E1284DC3FC030A64B1AD0D8382AE7E99DA46C3246B815318A4B848873800A4">>},
@@ -23,5 +21,6 @@
  {<<"opentelemetry_api">>, <<"F53EC8A1337AE4A487D43AC89DA4BD3A3C99DDF576655D071DEED8B56A2D5DDA">>},
  {<<"quickrand">>, <<"B8ACBF89A224BC217C3070CA8BEBC6EB236DBE7F9767993B274084EA044D35F0">>},
  {<<"telemetry">>, <<"2172E05A27531D3D31DD9782841065C50DD5C3C7699D95266B2EDD54C2DAFA1C">>},
+ {<<"temporal_sdk">>, <<"FDF4A8859E03BE4D65558771F53AC327D850AB7C61810F02020987392A449E19">>},
  {<<"uuid">>, <<"4E4C5CA3461DC47C5E157ED42AA3981A053B7A186792AF972A27B14A9489324E">>}]}
 ].

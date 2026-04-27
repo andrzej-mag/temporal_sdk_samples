@@ -1,6 +1,6 @@
 {application, temporal_sdk_samples, [
     {description, "Temporal Erlang and Elixir SDK samples"},
-    {vsn, "0.1.15"},
+    {vsn, "0.1.16"},
     {env, []},
     {modules, []},
     {registered, []},
