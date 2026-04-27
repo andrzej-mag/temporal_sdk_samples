@@ -126,7 +126,7 @@ Workflow executes 10 activities in parallel without rate limiting.
 A single activity takes 1000 milliseconds to execute.
 Because all activities are executed without concurrency limits, the total workflow execution time is
 1x1000 milliseconds plus overhead.
-Activities execution order is determined by the polling order of activity tasks.
+Activities execution order is determined by the (random) polling order of activity tasks.
 
 Set the activity task worker regular activities concurrency limits to 1 for the `"limited_worker"`:
 
@@ -231,5 +231,13 @@ ok
 ```
 <!-- tabs-close -->
 
-NOTE: The `"limited_worker"` activity task worker `task_poller_pool_size` configuration option is set
+### NOTES
+
+The `"limited_worker"` activity task worker `task_poller_pool_size` configuration option is set
 to 1 because the task poller pool size must be less than or equal to the concurrency limits.
+
+In most real-world use cases, the `"limited_worker"` activity task worker runs across an Erlang cluster
+of SDK worker nodes. This requires setting rate-limiter concurrency limits on the multiple worker nodes,
+which is done using the `temporal_sdk_worker:set_limiter_config/5` function.
+To mitigate brain-split scenarios in Erlang clusters, you can periodically call `set_limiter_config/5`
+within a [Temporal Schedule](https://docs.temporal.io/schedule).
