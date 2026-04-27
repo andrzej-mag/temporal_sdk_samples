@@ -73,6 +73,7 @@ defmodule TemporalSdkSamples.MixProject do
         ChildWorkflow,
         DeterminismCheck,
         EventHandler,
+        EvictionParallelHandler,
         HelloWorld,
         MutableMarker,
         PayloadConverter,
@@ -85,7 +86,8 @@ defmodule TemporalSdkSamples.MixProject do
         SignalSimple,
         WorkerBenchmark,
         WorkflowCancel,
-        WorkflowBenchmark
+        WorkflowBenchmark,
+        WorkflowEviction
       ],
       Erlang: [
         :activity_heartbeat,
@@ -94,6 +96,7 @@ defmodule TemporalSdkSamples.MixProject do
         :determinism_check,
         :echo_activity,
         :event_handler,
+        :eviction_parallel_handler,
         :hello_world,
         :mutable_marker,
         :payload_converter,
@@ -106,7 +109,8 @@ defmodule TemporalSdkSamples.MixProject do
         :signal_simple,
         :worker_benchmark,
         :workflow_cancel,
-        :workflow_benchmark
+        :workflow_benchmark,
+        :workflow_eviction
       ]
     ]
 

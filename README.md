@@ -53,3 +53,4 @@ For development and testing purposes it is recommended to run the
 
 1. [Install](https://docs.temporal.io/cli#install) Temporal CLI.
 2. [Start](https://docs.temporal.io/cli#start-dev-server) Temporal CLI dev server.
+3. Open your web browser at <http://localhost:8233> to inspect executed workflow samples.

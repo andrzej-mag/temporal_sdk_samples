@@ -1,12 +1,13 @@
 {application, temporal_sdk_samples, [
     {description, "Temporal Erlang and Elixir SDK samples"},
-    {vsn, "0.2.0"},
+    {vsn, "0.1.14"},
     {env, []},
     {modules, []},
     {registered, []},
     {applications, [
         kernel,
         stdlib,
+        telemetry,
         temporal_sdk
     ]}
 ]}.
