@@ -1,5 +1,26 @@
 # Changelog
 
+## [0.1.14](https://github.com/andrzej-mag/temporal_sdk_samples/compare/v0.1.13..v0.1.14) - 2026-04-27
+
+### 🚀 Features
+
+- Add Workflow Eviction and Eviction Parallel Handler samples - ([ae7702c](https://github.com/andrzej-mag/temporal_sdk_samples/commit/ae7702caa47d88ea0f1c1ebd1d8084f95fa14f3c))
+- Add Awaitable Event sample - ([738e034](https://github.com/andrzej-mag/temporal_sdk_samples/commit/738e03469fc29ba4f7bdfb3109ba91bdc6cbfbdd))
+- Add Mutable Marker sample - ([6e285a5](https://github.com/andrzej-mag/temporal_sdk_samples/commit/6e285a581987e574539ce36f98b8b9471b3fdcbb))
+
+### 📚 Documentation
+
+- Improve Rate Limiter docs - ([7e697f2](https://github.com/andrzej-mag/temporal_sdk_samples/commit/7e697f2bb158795698d710e83f920471ee79c788))
+- Fix Elixir md docs translation - ([cb14fb8](https://github.com/andrzej-mag/temporal_sdk_samples/commit/cb14fb8a4062bc7a6ff4ada02a23f73d7e378f42))
+
+### ⚙️ Miscellaneous
+
+- Improve Awaitable Event sample - ([9ea8592](https://github.com/andrzej-mag/temporal_sdk_samples/commit/9ea8592058ddcacb6f92a23955bdf2ca745c807e))
+- Fix Awaitable Event sample - ([8cac95d](https://github.com/andrzej-mag/temporal_sdk_samples/commit/8cac95dd37f5c1bb44916a93782f571fd89a0017))
+- Fix Awaitable Event sample - ([dc65255](https://github.com/andrzej-mag/temporal_sdk_samples/commit/dc652559389d5b5d0967e50f7652c7b23c637218))
+- Improve Mutable Marker sample - ([34178f8](https://github.com/andrzej-mag/temporal_sdk_samples/commit/34178f8495e0d0941af046dfb1605c25e0fd18e6))
+- Migrate temporal_sdk deps from hex to git - ([b6edb5b](https://github.com/andrzej-mag/temporal_sdk_samples/commit/b6edb5bcce61f1d6e69392f42d693f3c7830fe4d))
+
 ## [0.1.13](https://github.com/andrzej-mag/temporal_sdk_samples/compare/v0.1.12..v0.1.13) - 2026-03-16
 
 ### 🚀 Features
