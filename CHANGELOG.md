@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.16](https://github.com/andrzej-mag/temporal_sdk_samples/compare/v0.1.15..v0.1.16) - 2026-04-27
+
+### 🐛 Bug Fixes
+
+- Fix hex.pm deps locks - ([be1ae01](https://github.com/andrzej-mag/temporal_sdk_samples/commit/be1ae0162e590f3e854e41b3fd6280b3bc09d974))
+
 ## [0.1.15](https://github.com/andrzej-mag/temporal_sdk_samples/compare/v0.1.14..v0.1.15) - 2026-04-27
 
 ### 🐛 Bug Fixes
