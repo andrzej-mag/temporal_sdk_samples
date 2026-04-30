@@ -17,7 +17,7 @@ defmodule EvictionParallelHandler do
       )
 
     Process.sleep(2_000)
-    TemporalSdk.Service.signal_workflow(:cluster_1, we, @urgent_signal)
+    TemporalSdk.signal_workflow(:cluster_1, we, @urgent_signal)
     {:ok, {:completed, %{}}} = TemporalSdk.await_workflow(:cluster_1, we)
     :ok
   end

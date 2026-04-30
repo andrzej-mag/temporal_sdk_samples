@@ -14,7 +14,7 @@ defmodule QueryParallelHandler do
   end
 
   defp run_query(cluster, we, count) when count < 13 do
-    qr = TemporalSdk.Service.query_workflow(cluster, we, @progress_query)
+    qr = TemporalSdk.query_workflow(cluster, we, @progress_query)
     inspect_query_response(qr, "progress after #{count} sec")
     Process.sleep(1_000)
     run_query(cluster, we, count + 1)
@@ -22,7 +22,7 @@ defmodule QueryParallelHandler do
 
   defp run_query(cluster, we, _count) do
     TemporalSdk.await_workflow(cluster, we)
-    qr = TemporalSdk.Service.query_workflow(cluster, we, @progress_query)
+    qr = TemporalSdk.query_workflow(cluster, we, @progress_query)
     inspect_query_response(qr, "closed WF query")
   end
 

@@ -15,7 +15,7 @@ start_then_signal() ->
     {ok, #{workflow_execution := WE}} =
         temporal_sdk:start_workflow(?CLUSTER, "default", signal_simple_workflow),
     timer:sleep(1_000),
-    temporal_sdk_service:signal_workflow(?CLUSTER, WE, ?CANCEL_ACTIVITY_SIGNAL),
+    temporal_sdk:signal_workflow(?CLUSTER, WE, ?CANCEL_ACTIVITY_SIGNAL),
     temporal_sdk:wait_workflow(?CLUSTER, WE).
 
 start_with_signal() ->

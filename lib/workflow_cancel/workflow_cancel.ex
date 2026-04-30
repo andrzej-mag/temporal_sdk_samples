@@ -12,7 +12,7 @@ defmodule WorkflowCancel do
     Process.sleep(1_000)
 
     {:ok, %{}} =
-      TemporalSdk.Service.cancel_workflow(:cluster_1, we,
+      TemporalSdk.cancel_workflow(:cluster_1, we,
         reason: :erlang.atom_to_binary(cancellation_type)
       )
 

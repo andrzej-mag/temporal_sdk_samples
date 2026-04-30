@@ -45,5 +45,5 @@ defmodule SignalParallelHandler do
   end
 
   defp send_signal(signal),
-    do: TemporalSdk.Service.signal_workflow(@cluster, @signal_counter_we, signal)
+    do: TemporalSdk.signal_workflow(@cluster, @signal_counter_we, signal)
 end

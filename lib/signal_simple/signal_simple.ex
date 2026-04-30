@@ -10,7 +10,7 @@ defmodule SignalSimple do
       TemporalSdk.start_workflow(@cluster, "default", SignalSimple.Workflow)
 
     Process.sleep(1_000)
-    TemporalSdk.Service.signal_workflow(@cluster, we, @cancel_activity_signal)
+    TemporalSdk.signal_workflow(@cluster, we, @cancel_activity_signal)
     TemporalSdk.wait_workflow(@cluster, we)
   end
 

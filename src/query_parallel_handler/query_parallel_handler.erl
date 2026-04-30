@@ -16,13 +16,13 @@ start() ->
     run_query(Cluster, WE, 0).
 
 run_query(Cluster, WE, Count) when Count < 13 ->
-    QR = temporal_sdk_service:query_workflow(Cluster, WE, ?PROGRESS_QUERY),
+    QR = temporal_sdk:query_workflow(Cluster, WE, ?PROGRESS_QUERY),
     inspect_query_response(QR, lists:concat(["progress after ", Count, " sec"])),
     timer:sleep(1_000),
     run_query(Cluster, WE, Count + 1);
 run_query(Cluster, WE, _Count) ->
     temporal_sdk:await_workflow(Cluster, WE),
-    QR = temporal_sdk_service:query_workflow(Cluster, WE, ?PROGRESS_QUERY),
+    QR = temporal_sdk:query_workflow(Cluster, WE, ?PROGRESS_QUERY),
     inspect_query_response(QR, "closed WF query").
 
 inspect_query_response({ok, #{query_result := R}}, Header) ->

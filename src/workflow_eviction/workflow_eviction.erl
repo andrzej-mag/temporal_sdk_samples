@@ -23,10 +23,11 @@ run(ActivityPayloadSize, HandleEvictionStrategy) ->
             {input, [[ActivityPayloadSize, atom_to_binary(HandleEvictionStrategy)]]}
         ]),
     timer:sleep(2_000),
-    temporal_sdk_service:signal_workflow(cluster_1, WE, ?URGENT_SIGNAL),
+    temporal_sdk:signal_workflow(cluster_1, WE, ?URGENT_SIGNAL),
     {ok, {completed, #{}}} = temporal_sdk:await_workflow(cluster_1, WE),
     ok.
 
+-doc false.
 maybe_attach_telemetry() ->
     case telemetry:list_handlers([temporal_sdk, workflow, executor, stop]) of
         [] ->
@@ -43,6 +44,7 @@ maybe_attach_telemetry() ->
             ok
     end.
 
+-doc false.
 handle_eviction_log(
     [temporal_sdk, workflow, executor, stop] = E,
     #{},

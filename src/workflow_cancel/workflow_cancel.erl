@@ -15,7 +15,7 @@ run(CancellationType) when is_atom(CancellationType) ->
     ),
     %% Some other work simulated by timer:sleep/1
     timer:sleep(1_000),
-    {ok, #{}} = temporal_sdk_service:cancel_workflow(cluster_1, WE, [
+    {ok, #{}} = temporal_sdk:cancel_workflow(cluster_1, WE, [
         {reason, atom_to_binary(CancellationType)}
     ]),
     {ok, Result} = temporal_sdk:await_workflow(cluster_1, WE),

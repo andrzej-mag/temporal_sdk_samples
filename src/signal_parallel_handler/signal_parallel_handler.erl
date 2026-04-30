@@ -39,4 +39,4 @@ send_signals(0) ->
     send_signal(?KILL_SIGNAL).
 
 send_signal(Signal) ->
-    temporal_sdk_service:signal_workflow(?CLUSTER, ?SIGNAL_COUNTER_WE, Signal).
+    temporal_sdk:signal_workflow(?CLUSTER, ?SIGNAL_COUNTER_WE, Signal).

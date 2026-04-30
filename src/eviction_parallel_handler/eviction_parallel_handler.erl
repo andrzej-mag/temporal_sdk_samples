@@ -19,6 +19,6 @@ run(ActivityPayloadSize, EvictionStrategy) ->
             {input, [[ActivityPayloadSize, atom_to_binary(EvictionStrategy)]]}
         ]),
     timer:sleep(2_000),
-    temporal_sdk_service:signal_workflow(cluster_1, WE, ?URGENT_SIGNAL),
+    temporal_sdk:signal_workflow(cluster_1, WE, ?URGENT_SIGNAL),
     {ok, {completed, #{}}} = temporal_sdk:await_workflow(cluster_1, WE),
     ok.
