@@ -6,7 +6,7 @@
  {<<"telemetry">>,{pkg,<<"telemetry">>,<<"1.4.1">>},1},
  {<<"temporal_sdk">>,
   {git,"https://github.com/andrzej-mag/temporal_sdk",
-       {ref,"23d97182ec90ebd0d2f126e7d0baee68c5856d7b"}},
+       {ref,"d556616418b3ddcd23cd8cc010fc496723aaf9ea"}},
   0},
  {<<"uuid">>,{pkg,<<"uuid_erl">>,<<"2.0.7">>},1}]}.
 [

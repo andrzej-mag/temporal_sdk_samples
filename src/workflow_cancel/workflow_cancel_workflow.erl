@@ -11,7 +11,7 @@
 
 execute(_Context, _Input) ->
     A = start_activity(echo_activity, [[~"Hello World."], 5_000], [{heartbeat_timeout, 1_000}]),
-    case await_one([{cancel_request}, A]) of
+    case await_any([{cancel_request}, A]) of
         {ok, [#{state := requested, cause := ~"cancel_all" = C}, #{state := AS}]} when
             AS =:= cmd; AS =:= scheduled; AS =:= started
         ->

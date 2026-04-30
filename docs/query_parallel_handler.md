@@ -74,7 +74,7 @@ Following example commands will fail workflow execution or behave unexpectedly:
 ```elixir
 await({:query_request, "test_query"}, 10_000)
 
-await_one([{:query_request, "test_query"}, {:marker, :uuid4, :test_marker}])
+await_any([{:query_request, "test_query"}, {:marker, :uuid4, :test_marker}])
 
 case await({:query, "test_query"}) do
  {:ok, _} -> start_timer(1_000)
@@ -87,7 +87,7 @@ end
 ```erlang
 await({query_request, "test_query"}, 10_000)
 
-await_one([{query_request, "test_query"}, {marker, uuid4, test_marker}])
+await_any([{query_request, "test_query"}, {marker, uuid4, test_marker}])
 
 case await({query, "test_query"}) of
  {ok, _} -> start_timer(1_000);

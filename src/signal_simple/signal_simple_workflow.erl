@@ -13,7 +13,7 @@
 
 execute(_Context, _Input) ->
     A = start_activity(echo_activity, [[], 3_000], [{heartbeat_timeout, 1_000}]),
-    case await_one([{signal_request, ?CANCEL_ACTIVITY_SIGNAL}, A], {10, second}) of
+    case await_any([{signal_request, ?CANCEL_ACTIVITY_SIGNAL}, A], {10, second}) of
         {ok, [#{}, #{state := S}]} when S =:= cmd; S =:= scheduled; S =:= started ->
             cancel_activity(A),
             set_workflow_result(["Cancel requested. Activity canceled."]);

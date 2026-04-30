@@ -44,7 +44,7 @@ defmodule QueryParallelHandler.Workflow do
   def progress_query_handler(_context, _input) do
     case await({:query_request, @progress_query}) do
       {:ok, _} ->
-        case is_awaited_one(info: :progress, activity: :stage_2, activity: :stage_1) do
+        case is_awaited_any(info: :progress, activity: :stage_2, activity: :stage_1) do
           {true, [:undefined, %{}, _]} ->
             do_respond_progress_query(:stage_2)
 

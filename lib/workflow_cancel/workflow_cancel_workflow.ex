@@ -6,7 +6,7 @@ defmodule WorkflowCancel.Workflow do
   def execute(_context, _input) do
     a = start_activity(EchoActivity, [["Hello World."], 5_000], heartbeat_timeout: 1_000)
 
-    case await_one([{:cancel_request}, a]) do
+    case await_any([{:cancel_request}, a]) do
       {:ok, [%{state: :requested, cause: "cancel_all" = c}, %{state: as}]}
       when as === :cmd or as === :scheduled or as === :started ->
         cancel_activity(a)

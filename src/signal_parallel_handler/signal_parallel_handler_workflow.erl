@@ -37,7 +37,7 @@ report_signal_handler(_Context, _Input) ->
     end.
 
 signal_counter_handler(_Context, Count) when Count < 10_000 ->
-    case await_one([{signal_request, ?KILL_SIGNAL}, {signal_request, ?PING_SIGNAL}]) of
+    case await_any([{signal_request, ?KILL_SIGNAL}, {signal_request, ?PING_SIGNAL}]) of
         {ok, [noevent, PingSignalData]} ->
             NewCount = Count + count_requested_signals(PingSignalData),
             admit_signal(?PING_SIGNAL, [wait]),

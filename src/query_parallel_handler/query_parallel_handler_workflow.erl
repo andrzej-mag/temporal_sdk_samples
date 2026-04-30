@@ -50,7 +50,7 @@ cleanup(_Context, _Input) ->
 progress_query_handler(_Context, _Input) ->
     case await({query_request, ?PROGRESS_QUERY}) of
         {ok, _} ->
-            case is_awaited_one([{info, progress}, {activity, stage_2}, {activity, stage_1}]) of
+            case is_awaited_any([{info, progress}, {activity, stage_2}, {activity, stage_1}]) of
                 {true, [undefined, #{}, _]} -> do_respond_progress_query(stage_2);
                 {true, [undefined, noevent, #{}]} -> do_respond_progress_query(stage_1);
                 {true, [P, _, _]} -> do_respond_progress_query(P);

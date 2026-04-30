@@ -34,7 +34,7 @@ defmodule SignalParallelHandler.Workflow do
   end
 
   def signal_counter_handler(_context, count) when count < 10_000 do
-    case await_one(signal_request: @kill_signal, signal_request: @ping_signal) do
+    case await_any(signal_request: @kill_signal, signal_request: @ping_signal) do
       {:ok, [:noevent, ping_signal_data]} ->
         new_count = count + count_requested_signals(ping_signal_data)
         admit_signal(@ping_signal, [:wait])

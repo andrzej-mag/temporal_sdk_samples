@@ -8,7 +8,7 @@ defmodule SignalSimple.Workflow do
   def execute(_context, _input) do
     a = start_activity(:echo_activity, [[], 3_000], heartbeat_timeout: 1_000)
 
-    case await_one([{:signal_request, @cancel_activity_signal}, a], {10, :second}) do
+    case await_any([{:signal_request, @cancel_activity_signal}, a], {10, :second}) do
       {:ok, [%{}, %{state: s}]} when s == :cmd or s == :scheduled or s == :started ->
         cancel_activity(a)
         set_workflow_result(["Cancel requested. Activity canceled."])
