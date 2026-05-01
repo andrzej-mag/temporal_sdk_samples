@@ -145,6 +145,9 @@ defmodule TemporalSdkSamples.MixProject do
         {dep, {proto, addr}} ->
           {dep, [{proto, to_string(addr)}]}
 
+        {dep, {proto, addr, {opt_k, opt_v}}} ->
+          {dep, [{proto, to_string(addr)}, {opt_k, to_string(opt_v)}]}
+
         {dep, ver} ->
           case Keyword.fetch(shared_deps_opts, dep) do
             {:ok, ex_opts} -> {dep, to_string(ver), ex_opts}
