@@ -87,7 +87,8 @@ defmodule TemporalSdkSamples.MixProject do
         WorkerBenchmark,
         WorkflowCancel,
         WorkflowBenchmark,
-        WorkflowEviction
+        WorkflowEviction,
+        WorkflowTerminate
       ],
       Erlang: [
         :activity_heartbeat,
@@ -110,7 +111,8 @@ defmodule TemporalSdkSamples.MixProject do
         :worker_benchmark,
         :workflow_cancel,
         :workflow_benchmark,
-        :workflow_eviction
+        :workflow_eviction,
+        :workflow_terminate
       ]
     ]
 
