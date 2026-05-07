@@ -10,4 +10,4 @@
 -include_lib("temporal_sdk/include/workflow.hrl").
 
 execute(_Context, _Input) ->
-    start_timer(5_000, [wait]).
+    start_timer(3_000, [wait]).

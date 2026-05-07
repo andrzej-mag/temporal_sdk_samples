@@ -85,9 +85,10 @@ defmodule TemporalSdkSamples.MixProject do
         SignalParallelHandler,
         SignalSimple,
         WorkerBenchmark,
+        WorkflowBenchmark,
         WorkflowCancel,
         WorkflowCancelParallel,
-        WorkflowBenchmark,
+        WorkflowDelete,
         WorkflowEviction,
         WorkflowTerminate
       ],
@@ -110,9 +111,10 @@ defmodule TemporalSdkSamples.MixProject do
         :signal_parallel_handler,
         :signal_simple,
         :worker_benchmark,
+        :workflow_benchmark,
         :workflow_cancel,
         :workflow_cancel_parallel,
-        :workflow_benchmark,
+        :workflow_delete,
         :workflow_eviction,
         :workflow_terminate
       ]
