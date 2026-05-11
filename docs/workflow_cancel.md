@@ -1,8 +1,9 @@
-Workflow execution cancellation and usage of `await_open_before_close/1` sample.
+Workflow execution cancellation and usage of `temporal_sdk_workflow:await_open_before_close/1`.
 
 Workflow implementation in this sample starts a single asynchronous, long-running activity.
 
-The workflow handles the `{cancel_request}` workflow cancellation event based on the cancellation reasons:
+The workflow handles the `{cancel_request}` workflow cancellation awaitable event based on the
+cancellation reasons:
 
 - `cancel_all`: Cancels the long-running activity (if it is in the open state) and then cancels the workflow.
 - `cancel_await`: Waits for any open tasks (long-running activity) to complete and then cancels the workflow.
@@ -79,5 +80,5 @@ Sample source:
 <!-- tabs-close -->
 
 The error in the `cancel_abandon` scenario occurs when the activity executor sends a
-`RespondActivityTaskCompletedRequest` gRPC call after the parent workflow
+`"RespondActivityTaskCompletedRequest"` gRPC call after the parent workflow
 execution has already been closed-canceled.

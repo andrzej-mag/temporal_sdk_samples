@@ -46,5 +46,5 @@ Sample source:
 When running this benchmark, it is recommended to use the Temporal CLI dev server and to restart the
 Temporal server after each benchmark run to avoid exceeding the Temporal server's service rate limits.
 
-Single benchmark run opens 500 `PollActivityTaskQueueRequest` long-poll gRPC requests running in
+Single benchmark run opens 500 `"PollActivityTaskQueueRequest"` long-poll gRPC requests running in
 parallel, which may require increasing the OS File Descriptor limits.

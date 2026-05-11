@@ -1,7 +1,9 @@
 Terminate workflow execution command sample.
 
-This sample demonstrates the use of the `terminate_workflow/3` Temporal command.
-Sample uses the telemetry event logger defined in the `m:workflow_eviction` module.
+This sample demonstrates the use of the `temporal_sdk:terminate_workflow/3` Temporal command.
+The sample attaches the telemetry event logger defined in the `m:workflow_eviction` module.
+When the termination command is executed, SDK evicts workflow execution, and the workflow executor's
+`closing_state` is set to `{external_evict, terminated}`.
 
 Example run:
 
@@ -11,13 +13,12 @@ Example run:
 
 ```elixir
 iex(1)> WorkflowTerminate.run()
+[temporal_sdk,workflow,executor,stop]: 3 -> {external_evict,terminated}
 {:terminated,
  %{
    reason: "test termination",
-   identity: "wkst/nonode@nohost/cluster_1/<0.987.0>"
+   identity: "wkst/nonode@nohost/cluster_1/<0.997.0>"
  }}
-# after approximately 60 seconds:
-[temporal_sdk,workflow,executor,stop]: 3 -> terminated
 ```
 
 Sample source:
@@ -27,10 +28,9 @@ Sample source:
 
 ```erlang
 1> workflow_terminate:run().
+[temporal_sdk,workflow,executor,stop]: 3 -> {external_evict,terminated}
 {terminated,#{reason => <<"test termination">>,
-              identity => <<"wkst/nonode@nohost/cluster_1/<0.498.0>">>}}
-%% after approximately 60 seconds:
-[temporal_sdk,workflow,executor,stop]: 3 -> terminated
+              identity => <<"wkst/nonode@nohost/cluster_1/<0.359.0>">>}}
 ```
 
 Sample source:

@@ -6,7 +6,7 @@ Example uses two SDK cluster configurations:
    converter,
 - "cluster_1_enc" - a virtual SDK cluster with a custom Temporal payload converter configuration.
 
-Both SDK clusters connect to the same Temporal server instance at the default `localhost:7233` address.
+Both SDK clusters connect to the same Temporal server instance at the default `"localhost:7233"` address.
 
 Example custom payload converter codec encodes and encrypts Temporal payload data in three steps:
 

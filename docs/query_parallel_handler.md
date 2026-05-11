@@ -2,7 +2,7 @@ Example query parallel handler.
 
 Workflow defined in this example runs tasks in a multiple distinctive workflow execution stages:
 init, stage_1, stage_2, wait_async, cleanup and finalize.
-Workflow execution is queried every second with `<<"get_progress">>` query.
+Workflow execution is queried every second with `"get_progress"` query.
 When workflow execution is in open state, progress query parallel handler responds with
 workflow state `"open"` and current workflow execution stage.
 When workflow execution is closed, conventional query handle callback function responds with

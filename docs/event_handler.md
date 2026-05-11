@@ -13,14 +13,14 @@ activity events to the [event history](https://docs.temporal.io/workflow-executi
 When an activity is started,
 [activity events](https://docs.temporal.io/workflow-execution/event#activity-events)
 are added to the event history.
-First, an `ActivityTaskScheduled` event occurs, specifically `EVENT_TYPE_ACTIVITY_TASK_SCHEDULED`
+First, an `"ActivityTaskScheduled"` event occurs, specifically `'EVENT_TYPE_ACTIVITY_TASK_SCHEDULED'`
 events 5 and 6 in the example run code snippet below.
 When an activity task is completed, the activity task worker reports the completion to the Temporal service,
-and the Temporal service adds `ActivityTaskStarted` and `ActivityTaskCompleted` events to the event history.
+and the Temporal service adds `"ActivityTaskStarted"` and `"ActivityTaskCompleted"` events to the event history.
 In our example, this corresponds to events number 7 and 8 for the first activity, and events number
 12 and 13 for the second activity.
 
-Additionally, it should be noted that the `EVENT_TYPE_WORKFLOW_EXECUTION_COMPLETED` event is missing
+Additionally, it should be noted that the `'EVENT_TYPE_WORKFLOW_EXECUTION_COMPLETED'` event is missing
 from the events list produced by the `event_iterator`, as this event is not replayed during normal
 workflow execution.
 

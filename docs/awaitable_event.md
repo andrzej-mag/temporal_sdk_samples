@@ -1,14 +1,15 @@
-Demonstrates how to use awaitable events with the `ActivityTaskStarted` event.
+Demonstrates how to use awaitable events with the `"ActivityTaskStarted"` event.
 
 Successfully completed regular activity awaitable transitions through the following states:
 
-- `cmd` – the "command" state, set when the activity is started via the `start_activity()` command,
-- `scheduled` – state after the Temporal server schedules activity and records the `ActivityTaskScheduled`
-  event in the events history,
+- `cmd` – the "command" state, set when the activity is started via the
+  `temporal_sdk_workflow:start_activity/3` command,
+- `scheduled` – state after the Temporal server schedules activity and records the
+  `"ActivityTaskScheduled"` event in the events history,
 - `started` – state after SDK’s activity task worker successfully polls activity task and the
-  `ActivityTaskStarted` event is recorded,
+  `"ActivityTaskStarted"` event is recorded,
 - `completed` – state after activity executor successfully completes activity execution and the
-  `ActivityTaskCompleted` event is recorded.
+  `"ActivityTaskCompleted"` event is recorded.
 
 See the `m:temporal_sdk_workflow` module documentation for more information on awaitables.
 

@@ -9,6 +9,7 @@
 
 -spec run() -> ok | no_return().
 run() ->
+    workflow_eviction:maybe_attach_telemetry(),
     {ok, #{workflow_execution := WE}} = temporal_sdk:start_workflow(
         cluster_1, "default", workflow_terminate_workflow
     ),

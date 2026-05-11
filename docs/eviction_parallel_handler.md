@@ -3,10 +3,11 @@ event handler to monitor eviction related events.
 
 This sample is a variation of the "Workflow Eviction" sample.
 Workflow eviction is managed here by a dedicated parallel execution handler, `eviction_handler/2`,
-which processes consecutive Temporal events and invokes the `evict_workflow/0` SDK command to evict
-workflow. If a Temporal history event includes a `history_size_bytes` field in a `WorkflowTaskStartedEvent`,
+which processes consecutive Temporal events and invokes the `temporal_sdk_workflow:evict_workflow/0`
+SDK command to evict workflow.
+If a Temporal history event includes a `history_size_bytes` field in the `"WorkflowTaskStartedEvent"`,
 the eviction logic is applied according to the specified eviction strategy.
-Eviction requests in this sample are known in advance of the gRPC `RespondWorkflowTaskCompletedRequest`
+Eviction requests in this sample are known in advance of the gRPC `"RespondWorkflowTaskCompletedRequest"`
 call, enabling SDK to avoid polling stale workflow tasks from the sticky queue.
 
 Example run:

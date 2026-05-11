@@ -1,5 +1,5 @@
-Workflow eviction implemented with `handle_eviction()` callback, accompanied by a dedicated telemetry
-event handler to monitor eviction related events.
+Workflow eviction implemented with `c:temporal_sdk_workflow:handle_eviction/2` callback,
+accompanied by a dedicated telemetry event handler to monitor eviction related events.
 
 Workflow implementation in this sample performs the following steps:
 
@@ -26,7 +26,7 @@ Available eviction strategies:
   completion request.
 - `never`: Workflow is not evicted.
 
-The `handle_eviction/2` callback function is invoked after the gRPC `RespondWorkflowTaskCompletedRequest`
+The `handle_eviction/2` callback function is invoked after the gRPC `"RespondWorkflowTaskCompletedRequest"`
 call, which by default requests the Temporal server to dispatch new workflow task on the sticky queue.
 If the workflow execution is evicted after this call, it becomes impossible to notify the Temporal server
 that next workflow task should be dispatched on the regular task queue. As a result, the server

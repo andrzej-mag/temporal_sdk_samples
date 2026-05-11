@@ -8,7 +8,7 @@ This sample workflow implementation performs the following steps:
    marker value from step 2.
 
 To demonstrate the mutable marker functionality we simulate three worker node restarts using a timer
-and `terminate_executor/0`.
+and `temporal_sdk_workflow:terminate_executor/0`.
 After the workflow executor is forcefully terminated, workflow task timeouts which can be ignored
 in this context. This triggers workflow execution retry replaying existing workflow history events.
 During workflow replay `first_activity` and `mutable_marker` results are fetched from the history.
@@ -21,7 +21,7 @@ After each mutation of the marker and workflow reset, the `second_activity` is s
 mutated input.
 
 During sample runs, the Temporal server returns "workflow execution already completed" errors
-when handling `RespondActivityTaskCompleted` gRPC requests for `second_activity`.
+when handling `"RespondActivityTaskCompleted"` gRPC requests for `second_activity`.
 These errors occur because SDK activity executors for `second_activity` are unaware of parent workflow
 resets and still attempt to dispatch `RespondActivityTaskCompleted` to workflow executions that have
 already been closed.

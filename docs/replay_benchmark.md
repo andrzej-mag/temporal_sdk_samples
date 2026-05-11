@@ -1,8 +1,8 @@
 Synthetic benchmark of the selected workflow commands during workflow execution and
 [replay](https://docs.temporal.io/encyclopedia/event-history/event-history-typescript#How-History-Replay-Provides-Durable-Execution).
 
-Benchmark is implemented as a `replay_benchmark_workflow` workflow.
-`replay_benchmark_workflow` starts and awaits 1000
+Benchmark is implemented as a `replay_benchmark_workflow` / `ReplayBenchmark.Workflow` workflow,
+which starts and awaits 1000
 [workflow commands](https://docs.temporal.io/workflow-execution#command) of a given kind as a single
 [workflow task](https://docs.temporal.io/tasks#workflow-task).
 After given workflow task is completed in the first workflow execution, an error is thrown using
