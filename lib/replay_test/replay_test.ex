@@ -1,6 +1,6 @@
 defmodule ReplayTest do
   @external_resource "docs/replay_test.md"
-  @moduledoc TemporalSdk.Utils.exdoc!("docs/replay_test.md")
+  @moduledoc TemporalSdk.Utils.Code.exdoc!("docs/replay_test.md")
 
   def replay_from_file() do
     TemporalSdk.replay_file(

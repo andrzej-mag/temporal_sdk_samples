@@ -1,6 +1,6 @@
 defmodule WorkflowEviction do
   @external_resource "docs/workflow_eviction.md"
-  @moduledoc TemporalSdk.Utils.exdoc!("docs/workflow_eviction.md")
+  @moduledoc TemporalSdk.Utils.Code.exdoc!("docs/workflow_eviction.md")
 
   @urgent_signal "urgent_signal"
 

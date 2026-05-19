@@ -1,6 +1,6 @@
 defmodule WorkflowCancelParallel do
   @external_resource "docs/workflow_cancel_parallel.md"
-  @moduledoc TemporalSdk.Utils.exdoc!("docs/workflow_cancel_parallel.md")
+  @moduledoc TemporalSdk.Utils.Code.exdoc!("docs/workflow_cancel_parallel.md")
 
   @spec run(cancellation_delay :: pos_integer()) :: :temporal_sdk.workflow_result() | no_return()
   def run(cancellation_delay) when is_integer(cancellation_delay) do

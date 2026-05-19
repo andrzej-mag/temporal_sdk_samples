@@ -1,6 +1,6 @@
 defmodule AwaitableEvent do
   @external_resource "docs/awaitable_event.md"
-  @moduledoc TemporalSdk.Utils.exdoc!("docs/awaitable_event.md")
+  @moduledoc TemporalSdk.Utils.Code.exdoc!("docs/awaitable_event.md")
 
   @spec run(worker_start_delay :: non_neg_integer()) :: :ok
   def run(worker_start_delay) do

@@ -1,6 +1,6 @@
 defmodule SignalSimple do
   @external_resource "docs/signal_simple.md"
-  @moduledoc TemporalSdk.Utils.exdoc!("docs/signal_simple.md")
+  @moduledoc TemporalSdk.Utils.Code.exdoc!("docs/signal_simple.md")
 
   @cluster :cluster_1
   @cancel_activity_signal "cancel_activity"

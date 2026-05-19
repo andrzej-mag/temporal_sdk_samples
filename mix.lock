@@ -1,5 +1,5 @@
 %{
-  "cowlib": {:hex, :cowlib, "2.16.0", "54592074ebbbb92ee4746c8a8846e5605052f29309d3a873468d76cdf932076f", [:make, :rebar3], [], "hexpm", "7f478d80d66b747344f0ea7708c187645cfcc08b11aa424632f78e25bf05db51"},
+  "cowlib": {:hex, :cowlib, "2.16.1", "318d385d55f657e9a5005838c4e426e13dcd724a691438384b6165a69687e531", [:make, :rebar3], [], "hexpm", "58f1e425a9e04176f1d30e20116f57c4e90ef0e187552e9741c465bdf4044f70"},
   "dialyxir": {:hex, :dialyxir, "1.4.7", "dda948fcee52962e4b6c5b4b16b2d8fa7d50d8645bbae8b8685c3f9ecb7f5f4d", [:mix], [{:erlex, ">= 0.2.8", [hex: :erlex, repo: "hexpm", optional: false]}], "hexpm", "b34527202e6eb8cee198efec110996c25c5898f43a4094df157f8d28f27d9efe"},
   "earmark_parser": {:hex, :earmark_parser, "1.4.44", "f20830dd6b5c77afe2b063777ddbbff09f9759396500cdbe7523efd58d7a339c", [:mix], [], "hexpm", "4778ac752b4701a5599215f7030989c989ffdc4f6df457c5f36938cc2d2a2750"},
   "erlex": {:hex, :erlex, "0.2.8", "cd8116f20f3c0afe376d1e8d1f0ae2452337729f68be016ea544a72f767d9c12", [:mix], [], "hexpm", "9d66ff9fedf69e49dc3fd12831e12a8a37b76f8651dd21cd45fcf5561a8a7590"},
@@ -11,7 +11,7 @@
   "nimble_parsec": {:hex, :nimble_parsec, "1.4.2", "8efba0122db06df95bfaa78f791344a89352ba04baedd3849593bfce4d0dc1c6", [:mix], [], "hexpm", "4b21398942dda052b403bbe1da991ccd03a053668d147d53fb8c4e0efe09c973"},
   "opentelemetry_api": {:hex, :opentelemetry_api, "1.5.0", "1a676f3e3340cab81c763e939a42e11a70c22863f645aa06aafefc689b5550cf", [:mix, :rebar3], [], "hexpm", "f53ec8a1337ae4a487d43ac89da4bd3a3c99ddf576655d071deed8b56a2d5dda"},
   "quickrand": {:hex, :quickrand, "2.0.7", "d2bd76676a446e6a058d678444b7fda1387b813710d1af6d6e29bb92186c8820", [:rebar3], [], "hexpm", "b8acbf89a224bc217c3070ca8bebc6eb236dbe7f9767993b274084ea044d35f0"},
-  "telemetry": {:hex, :telemetry, "1.4.1", "ab6de178e2b29b58e8256b92b382ea3f590a47152ca3651ea857a6cae05ac423", [:rebar3], [], "hexpm", "2172e05a27531d3d31dd9782841065c50dd5c3c7699d95266b2edd54c2dafa1c"},
-  "temporal_sdk": {:git, "https://github.com/andrzej-mag/temporal_sdk", "be4c7953776cbbcdb9194be7c323254c6a7819ad", [branch: "main"]},
+  "telemetry": {:hex, :telemetry, "1.4.2", "a0cb522801dffb1c49fe6e30561badffc7b6d0e180db1300df759faa22062855", [:rebar3], [], "hexpm", "928f6495066506077862c0d1646609eed891a4326bee3126ba54b60af61febb1"},
+  "temporal_sdk": {:hex, :temporal_sdk, "0.2.11", "72a149dfad34e01c1eca8849d64b5c6f2d331d522dbee2a9966f2986b8e3d1e1", [:mix, :rebar3], [{:gun, "~> 2.2.0", [hex: :gun, repo: "hexpm", optional: false]}, {:opentelemetry_api, "~> 1.5.0", [hex: :opentelemetry_api, repo: "hexpm", optional: false]}, {:telemetry, "~> 1.4.1", [hex: :telemetry, repo: "hexpm", optional: false]}, {:uuid, "~> 2.0.0", [hex: :uuid_erl, repo: "hexpm", optional: false]}], "hexpm", "fbb63044e2fa37bec2027f68b8633d36768b32dcbe47665bd84b86477f9a2a6c"},
   "uuid": {:hex, :uuid_erl, "2.0.7", "b2078d2cc814f53afa52d36c91e08962c7e7373585c623f4c0ea6dfb04b2af94", [:rebar3], [{:quickrand, ">= 2.0.7", [hex: :quickrand, repo: "hexpm", optional: false]}], "hexpm", "4e4c5ca3461dc47c5e157ed42aa3981a053b7a186792af972a27b14a9489324e"},
 }

@@ -1,7 +1,7 @@
 defmodule DeterminismCheck do
   @behaviour :temporal_sdk_api_workflow_check
   @external_resource "docs/determinism_check.md"
-  @moduledoc TemporalSdk.Utils.exdoc!("docs/determinism_check.md")
+  @moduledoc TemporalSdk.Utils.Code.exdoc!("docs/determinism_check.md")
 
   @spec replay(check_mod :: module(), input :: binary(), replay_input :: binary()) ::
           :temporal_sdk.replay_json_ret()

@@ -1,6 +1,6 @@
 defmodule MutableMarker do
   @external_resource "docs/mutable_marker.md"
-  @moduledoc TemporalSdk.Utils.exdoc!("docs/mutable_marker.md")
+  @moduledoc TemporalSdk.Utils.Code.exdoc!("docs/mutable_marker.md")
 
   def run do
     TemporalSdk.start_workflow(:cluster_1, "default", MutableMarker.Workflow,

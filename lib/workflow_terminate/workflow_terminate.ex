@@ -1,6 +1,6 @@
 defmodule WorkflowTerminate do
   @external_resource "docs/workflow_terminate.md"
-  @moduledoc TemporalSdk.Utils.exdoc!("docs/workflow_terminate.md")
+  @moduledoc TemporalSdk.Utils.Code.exdoc!("docs/workflow_terminate.md")
 
   @spec run() :: :temporal_sdk.workflow_result() | no_return()
   def run() do

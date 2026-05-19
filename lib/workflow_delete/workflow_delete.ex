@@ -1,6 +1,6 @@
 defmodule WorkflowDelete do
   @external_resource "docs/workflow_delete.md"
-  @moduledoc TemporalSdk.Utils.exdoc!("docs/workflow_delete.md")
+  @moduledoc TemporalSdk.Utils.Code.exdoc!("docs/workflow_delete.md")
 
   @spec run() :: :ok | no_return()
   def run() do

@@ -1,6 +1,6 @@
 defmodule ActivityHeartbeat do
   @external_resource "docs/activity_heartbeat.md"
-  @moduledoc TemporalSdk.Utils.exdoc!("docs/activity_heartbeat.md")
+  @moduledoc TemporalSdk.Utils.Code.exdoc!("docs/activity_heartbeat.md")
 
   @stage_durations [3_000, 4_000, 5_000]
   @stage_cancelation_times [1_000, 5_000, 10_000]

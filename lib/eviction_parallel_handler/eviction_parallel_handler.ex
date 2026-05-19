@@ -1,6 +1,6 @@
 defmodule EvictionParallelHandler do
   @external_resource "docs/eviction_parallel_handler.md"
-  @moduledoc TemporalSdk.Utils.exdoc!("docs/eviction_parallel_handler.md")
+  @moduledoc TemporalSdk.Utils.Code.exdoc!("docs/eviction_parallel_handler.md")
 
   @urgent_signal "urgent_signal"
 
