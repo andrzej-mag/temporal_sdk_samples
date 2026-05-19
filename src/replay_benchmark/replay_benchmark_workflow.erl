@@ -43,13 +43,13 @@ run_tasks(~"regular_execution_activity", Seq) ->
         start_activity(echo_activity, [I], [{activity_id, integer_to_list(I)}])
      || I <- Seq
     ],
-    Seq =:= lists:map(fun(#{result := [R]}) -> R end, wait_all(Tasks));
+    Seq =:= [R || #{result := [R]} <- wait_all(Tasks)];
 run_tasks(~"eager_execution_activity", Seq) ->
     Tasks = [
         start_activity(echo_activity, [I], [eager_execution, {activity_id, integer_to_list(I)}])
      || I <- Seq
     ],
-    Seq =:= lists:map(fun(#{result := [R]}) -> R end, wait_all(Tasks));
+    Seq =:= [R || #{result := [R]} <- wait_all(Tasks)];
 run_tasks(~"activity_await_cmd", Seq) ->
     Tasks = [
         start_activity(echo_activity, [I], [
@@ -70,7 +70,7 @@ run_tasks(~"marker", Seq) ->
         record_marker(fun() -> [I] end, [{marker_name, integer_to_list(I)}])
      || I <- Seq
     ],
-    Seq =:= lists:map(fun(#{value := [R]}) -> R end, wait_all(Tasks));
+    Seq =:= [R || #{value := [R]} <- wait_all(Tasks)];
 run_tasks(~"recorded_marker", Seq) ->
     Tasks = [
         record_marker(fun() -> [I] end, [
@@ -78,4 +78,4 @@ run_tasks(~"recorded_marker", Seq) ->
         ])
      || I <- Seq
     ],
-    Seq =:= lists:map(fun(#{value := [R]}) -> R end, wait_all(Tasks)).
+    Seq =:= [R || #{value := [R]} <- wait_all(Tasks)].
