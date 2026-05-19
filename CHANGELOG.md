@@ -1,5 +1,26 @@
 # Changelog
 
+## [0.2.0](https://github.com/andrzej-mag/temporal_sdk_samples/compare/v0.1.16..v0.2.0) - 2026-05-19
+
+### 🚀 Features
+
+- Add Workflow Delete sample - ([4106d91](https://github.com/andrzej-mag/temporal_sdk_samples/commit/4106d91417f53f8d7e68e2110a1b36f746704af5))
+- Add Workflow Cancel Parallel sample - ([1c3ce79](https://github.com/andrzej-mag/temporal_sdk_samples/commit/1c3ce794dbfff54ee262f4f752e39340dd06510d))
+- Add Workflow Terminate sample - ([d3c4361](https://github.com/andrzej-mag/temporal_sdk_samples/commit/d3c436104dfacc90eda1f32158ef3d4ffdfa2a9d))
+
+### 🐛 Bug Fixes
+
+- Fix Workflow Terminate docs groups - ([2789de4](https://github.com/andrzej-mag/temporal_sdk_samples/commit/2789de41128ee8123ce95a25ba0bbe65e75e6a21))
+
+### ⚙️ Miscellaneous
+
+- Fix elp W0066 - ([8f7e671](https://github.com/andrzej-mag/temporal_sdk_samples/commit/8f7e6714a368e49e0c3ca0e07f92e7436ac05fdf))
+- Migrate to new TemporalSdk.Utils.Code.exdoc! - ([93b1079](https://github.com/andrzej-mag/temporal_sdk_samples/commit/93b1079815b5f27406eebc6b8fc63a7817f4b2ce))
+- Update after SDK eviction and docs translation improvements - ([6e6bdfb](https://github.com/andrzej-mag/temporal_sdk_samples/commit/6e6bdfb76df69493f08943204240085f0804177c))
+- Bump gun to v2.2.0 - ([f5d6a3b](https://github.com/andrzej-mag/temporal_sdk_samples/commit/f5d6a3b75726ea45e6cad049212d9363c505158d))
+- Update to renamed await operator `one` to `any` - ([19c0f6f](https://github.com/andrzej-mag/temporal_sdk_samples/commit/19c0f6f0c258eaa722e5850368602f434bf9e0f6))
+- Update to new temporal_sdk API - ([cc72033](https://github.com/andrzej-mag/temporal_sdk_samples/commit/cc72033d6616b3daaa39aa2482354b407946e99a))
+
 ## [0.1.16](https://github.com/andrzej-mag/temporal_sdk_samples/compare/v0.1.15..v0.1.16) - 2026-04-27
 
 ### 🐛 Bug Fixes
