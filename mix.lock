@@ -12,6 +12,6 @@
   "opentelemetry_api": {:hex, :opentelemetry_api, "1.5.0", "1a676f3e3340cab81c763e939a42e11a70c22863f645aa06aafefc689b5550cf", [:mix, :rebar3], [], "hexpm", "f53ec8a1337ae4a487d43ac89da4bd3a3c99ddf576655d071deed8b56a2d5dda"},
   "quickrand": {:hex, :quickrand, "2.0.7", "d2bd76676a446e6a058d678444b7fda1387b813710d1af6d6e29bb92186c8820", [:rebar3], [], "hexpm", "b8acbf89a224bc217c3070ca8bebc6eb236dbe7f9767993b274084ea044d35f0"},
   "telemetry": {:hex, :telemetry, "1.4.2", "a0cb522801dffb1c49fe6e30561badffc7b6d0e180db1300df759faa22062855", [:rebar3], [], "hexpm", "928f6495066506077862c0d1646609eed891a4326bee3126ba54b60af61febb1"},
-  "temporal_sdk": {:hex, :temporal_sdk, "0.2.11", "72a149dfad34e01c1eca8849d64b5c6f2d331d522dbee2a9966f2986b8e3d1e1", [:mix, :rebar3], [{:gun, "~> 2.2.0", [hex: :gun, repo: "hexpm", optional: false]}, {:opentelemetry_api, "~> 1.5.0", [hex: :opentelemetry_api, repo: "hexpm", optional: false]}, {:telemetry, "~> 1.4.1", [hex: :telemetry, repo: "hexpm", optional: false]}, {:uuid, "~> 2.0.0", [hex: :uuid_erl, repo: "hexpm", optional: false]}], "hexpm", "fbb63044e2fa37bec2027f68b8633d36768b32dcbe47665bd84b86477f9a2a6c"},
+  "temporal_sdk": {:git, "https://github.com/andrzej-mag/temporal_sdk", "82a24e4dafa99b923b837bfe392bbee53f9ae645", [branch: "main"]},
   "uuid": {:hex, :uuid_erl, "2.0.7", "b2078d2cc814f53afa52d36c91e08962c7e7373585c623f4c0ea6dfb04b2af94", [:rebar3], [{:quickrand, ">= 2.0.7", [hex: :quickrand, repo: "hexpm", optional: false]}], "hexpm", "4e4c5ca3461dc47c5e157ed42aa3981a053b7a186792af972a27b14a9489324e"},
 }
