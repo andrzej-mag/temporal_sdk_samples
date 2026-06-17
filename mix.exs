@@ -62,7 +62,8 @@ defmodule TemporalSdkSamples.MixProject do
       source_ref: "v#{version()}",
       formatters: ["html"],
       skip_undefined_reference_warnings_on: ["CHANGELOG.md"],
-      groups_for_modules: groups_for_modules()
+      groups_for_modules: groups_for_modules(),
+      assets: %{"docs/assets" => "assets"}
     ]
 
   defp groups_for_modules,
@@ -76,6 +77,7 @@ defmodule TemporalSdkSamples.MixProject do
         EvictionParallelHandler,
         HelloWorld,
         MutableMarker,
+        OtelSample,
         ParallelExecution,
         PayloadConverter,
         QueryParallelHandler,
@@ -103,6 +105,7 @@ defmodule TemporalSdkSamples.MixProject do
         :eviction_parallel_handler,
         :hello_world,
         :mutable_marker,
+        :otel_sample,
         :parallel_execution,
         :payload_converter,
         :query_parallel_handler,

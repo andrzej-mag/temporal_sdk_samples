@@ -19,6 +19,6 @@
     ok.
 start(TaskType) ->
     temporal_sdk:start_workflow(cluster_1, "default", replay_benchmark_workflow, [
-        wait, {input, [[atom_to_binary(TaskType)]]}
+        wait, {opentelemetry, false}, {input, [[atom_to_binary(TaskType)]]}
     ]),
     ok.

@@ -21,10 +21,7 @@ execute(_Context, [[ActivityPayloadSize, HandleEvictionStrategy]]) when
     set_info(binary_to_existing_atom(HandleEvictionStrategy), [{info_id, handle_eviction_strategy}]),
     ActivityPayload = binary:copy(~"X", ActivityPayloadSize),
     run_blocking_activities(ActivityPayload, ?ACTIVITY_COUNT),
-    AwaitResult = temporal_sdk_workflow:await(
-        {signal_request, ?URGENT_SIGNAL},
-        [evict, {timeout, {2, second}}]
-    ),
+    AwaitResult = await({signal_request, ?URGENT_SIGNAL}, [evict, {timeout, {2, second}}]),
     run_blocking_activities(ActivityPayload, ?ACTIVITY_COUNT),
     case AwaitResult of
         {ok, #{state := requested}} -> admit_signal(?URGENT_SIGNAL);

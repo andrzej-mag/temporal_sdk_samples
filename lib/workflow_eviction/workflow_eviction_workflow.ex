@@ -16,13 +16,7 @@ defmodule WorkflowEviction.Workflow do
 
     activity_payload = String.duplicate("X", activity_payload_size)
     run_blocking_activities(activity_payload, @activity_count)
-
-    await_result =
-      TemporalSdk.Workflow.await({:signal_request, @urgent_signal}, [
-        :evict,
-        timeout: {2, :second}
-      ])
-
+    await_result = await({:signal_request, @urgent_signal}, [:evict, timeout: {2, :second}])
     run_blocking_activities(activity_payload, @activity_count)
 
     case await_result do

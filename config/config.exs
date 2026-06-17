@@ -17,3 +17,14 @@ config :temporal_sdk,
       workflows: [[task_queue: "encrypted"]]
     ]
   ]
+
+config :opentelemetry,
+  span_processor: :batch,
+  traces_exporter: :otlp,
+  resource: [service: %{name: "temporal_sdk_samples"}]
+
+config :opentelemetry_exporter,
+  # otlp_protocol: :grpc,
+  # otlp_endpoint: "http://127.0.0.1:4317",
+  otlp_protocol: :http_protobuf,
+  otlp_endpoint: "http://127.0.0.1:4318"

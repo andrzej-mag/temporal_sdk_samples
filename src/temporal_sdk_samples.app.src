@@ -1,6 +1,6 @@
 {application, temporal_sdk_samples, [
     {description, "Temporal Erlang and Elixir SDK samples"},
-    {vsn, "0.2.0"},
+    {vsn, "0.2.2"},
     {env, []},
     {modules, []},
     {registered, []},
@@ -8,6 +8,9 @@
         kernel,
         stdlib,
         telemetry,
+        tls_certificate_check,
+        opentelemetry_exporter,
+        opentelemetry,
         temporal_sdk
     ]}
 ]}.
