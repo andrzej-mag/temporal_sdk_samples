@@ -46,3 +46,7 @@ Sample source:
 [src/hello_world](https://github.com/andrzej-mag/temporal_sdk_samples/tree/main/src/hello_world)
 
 <!-- tabs-close -->
+
+Workflow execution OpenTelemetry trace::
+
+![OpenTelemetry Span](assets/hello_world_trace.png)

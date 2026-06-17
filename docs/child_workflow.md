@@ -98,3 +98,7 @@ Sample source:
 [src/child_workflow](https://github.com/andrzej-mag/temporal_sdk_samples/tree/main/src/child_workflow)
 
 <!-- tabs-close -->
+
+Workflow execution OpenTelemetry trace for the `:complete` case:
+
+![OpenTelemetry Span](assets/child_workflow_trace.png)

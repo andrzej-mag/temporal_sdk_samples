@@ -54,3 +54,7 @@ Corresponding other SDKs implementations:
 
 * [Go SDK](https://github.com/temporalio/samples-go/tree/main/saga),
 * [Ruby SDK](https://github.com/temporalio/samples-ruby/tree/main/saga).
+
+Workflow execution OpenTelemetry trace (Elixir):
+
+![OpenTelemetry Span](assets/saga_trace.png)
