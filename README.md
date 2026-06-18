@@ -1,9 +1,9 @@
-# Temporal Erlang and Elixir SDK samples
+# Temporal Erlang/Elixir SDK samples
 
 [![Hex Docs](https://img.shields.io/badge/hex-docs-informational?style=for-the-badge)](https://hexdocs.pm/temporal_sdk_samples)
 
 This is the set of samples for the
-[Temporal Erlang and Elixir SDK](https://github.com/andrzej-mag/temporal_sdk).
+[Temporal Erlang/Elixir SDK](https://github.com/andrzej-mag/temporal_sdk).
 
 Each sample can be considered a standalone Elixir or Erlang application.
 A list of samples with instructions on how to start and use each sample is provided in the

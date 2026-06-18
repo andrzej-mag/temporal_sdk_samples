@@ -1,4 +1,4 @@
-Mutable marker sample.
+Mutable marker sample. [experimental]
 
 This sample workflow implementation performs the following steps:
 

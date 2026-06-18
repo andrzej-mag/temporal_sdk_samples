@@ -1,7 +1,7 @@
 Example implementation of the `m:temporal_sdk_api_workflow_check` workflow determinism check
 behaviour module.
 
-Erlang and Elixir SDK provide two built-in implementations of the `m:temporal_sdk_api_workflow_check`
+Erlang/Elixir SDK provide two built-in implementations of the `m:temporal_sdk_api_workflow_check`
 behaviour: `temporal_sdk_api_workflow_check_strict` and `temporal_sdk_api_workflow_check_temporal`.
 
 The workflow determinism check behaviour implementation in this sample `determinism_check` is aligned
