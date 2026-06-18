@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.2.20](https://github.com/andrzej-mag/temporal_sdk_samples/compare/v0.2.0..v0.2.20) - 2026-06-18
+
+### 🚀 Features
+
+- Add Otel Sample - ([a4efab7](https://github.com/andrzej-mag/temporal_sdk_samples/commit/a4efab7ebc8b41ee2f0c6eb5a698252818a27fa0))
+- Add Parallel Execution sample - ([5574b6c](https://github.com/andrzej-mag/temporal_sdk_samples/commit/5574b6c9be11245179d9b2e5dd7f7e3cc08d3dea))
+
+### 📚 Documentation
+
+- Add OpenTelemetry traces screenshots - ([166b27c](https://github.com/andrzej-mag/temporal_sdk_samples/commit/166b27c4dd75240f36227dd7596d672417ae6791))
+
+### ⚙️ Miscellaneous
+
+- Fix package SemVer - ([c81ff51](https://github.com/andrzej-mag/temporal_sdk_samples/commit/c81ff510ca220b1803161a9bb759fab3378f7655))
+- Rename "Erlang and Elixir SDK" to "Erlang/Elixir SDK" - ([e8986a6](https://github.com/andrzej-mag/temporal_sdk_samples/commit/e8986a617a21be0d123980320a9bf47b06a21d07))
+
 ## [0.2.0](https://github.com/andrzej-mag/temporal_sdk_samples/compare/v0.1.16..v0.2.0) - 2026-05-19
 
 ### 🚀 Features
