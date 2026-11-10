@@ -1,6 +1,6 @@
 {application, temporal_sdk_samples, [
-    {description, "Temporal Erlang/Elixir SDK samples. (dummy hexdocs-only package)"},
-    {vsn, "0.2.20"},
+    {description, "Unofficial Temporal Erlang/Elixir SDK samples."},
+    {vsn, "0.2.21"},
     {env, []},
     {modules, []},
     {registered, []},

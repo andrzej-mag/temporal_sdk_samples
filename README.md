@@ -1,9 +1,7 @@
 # Temporal Erlang/Elixir SDK samples
 
-[![Hex Docs](https://img.shields.io/badge/hex-docs-informational?style=for-the-badge)](https://hexdocs.pm/temporal_sdk_samples)
-
 This is the set of samples for the
-[Temporal Erlang/Elixir SDK](https://github.com/andrzej-mag/temporal_sdk).
+[unofficial Temporal Erlang/Elixir SDK](https://github.com/andrzej-mag/temporal_sdk).
 
 Each sample can be considered a standalone Elixir or Erlang application.
 A list of samples with instructions on how to start and use each sample is provided in the
@@ -54,3 +52,8 @@ For development and testing purposes it is recommended to run the
 1. [Install](https://docs.temporal.io/cli#install) Temporal CLI.
 2. [Start](https://docs.temporal.io/cli#start-dev-server) Temporal CLI dev server.
 3. Open your web browser at <http://localhost:8233> to inspect executed workflow samples.
+
+## Documentation
+
+Documentation can be generated using `mix docs`, and the resulting files are placed in the `_doc`
+directory.
