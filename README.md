@@ -3,20 +3,12 @@
 This is the set of samples for the
 [unofficial Temporal Erlang/Elixir SDK](https://github.com/andrzej-mag/temporal_sdk).
 
-Each sample can be considered a standalone Elixir or Erlang application.
 A list of samples with instructions on how to start and use each sample is provided in the
-[hexdocs documentation](https://hexdocs.pm/temporal_sdk_samples/api-reference.html).
-
-This software is published as a package on hex.pm to provide online hexdocs documentation exclusively.
-Please refrain from adding this package to your Elixir or Erlang application dependencies as it
-will have no effect.
-Please refer to the [SDK repository](https://github.com/andrzej-mag/temporal_sdk) for instructions on
-SDK usage.
+[documentation](https://github.com/andrzej-mag/temporal_sdk_samples/tree/main/docs).
 
 ## Usage
 
 Clone this repository, fetch dependencies using `mix deps.get`, and start `iex -S mix` or `rebar3 shell`.
-Run any of the [available samples](https://hexdocs.pm/temporal_sdk_samples/api-reference.html).
 Saga pattern implementation example run:
 
 <!-- tabs-open -->
@@ -55,5 +47,5 @@ For development and testing purposes it is recommended to run the
 
 ## Documentation
 
-Documentation can be generated using `mix docs`, and the resulting files are placed in the `_doc`
-directory.
+ExDoc documentation can be generated using `mix docs`, and the resulting files are placed in the
+`_doc` directory.
